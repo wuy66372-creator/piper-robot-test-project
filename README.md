@@ -1,118 +1,195 @@
-# AGILE X Piper 本机接口
+# Show-Harness GUMI：遥操、采集、LoRA 微调与在线推理
 
-运行主机为 Linux alien。用户已确认 `can0` 是左臂；2026-10-12 13:12 两路六关节使能位均为 true。具体 Piper 产品变体仍未从铭牌确认。
+本项目将 Show-Harness 的视觉动作模型接入本地 Piper 双臂，在同一个 GUMI 网页中完成 **手动遥操 → 成功示教采集 → LoRA 微调 → 在线推理与执行**。硬件层使用原生 SocketCAN、官方 Piper SDK 和相机 SDK，无需 ROS。
 
-**13:44 最新状态：左臂 can0、右臂 can1 均已成功由 CAN 独立接管，复原到配置限位内，并分别通过 J6 +1°/返回的实机关节反馈验收；两臂保持使能、CAN 控制，无主控故障。**
+当前部署面向 Linux alien：Piper 双臂、Intel RealSense D435i 主视角、两台 Orbbec 腕部相机，以及约 16 GB 显存的 NVIDIA GPU。模型支持 Qwen3.5 0.8B / 2B / 4B、官方单臂动作 LoRA 和本项目训练的单臂 / 双臂 LoRA。
 
-## 环境与入口
+本文按 `show_harness/` 的后续更新整理。旧说明中的“仅浏览器前视”“训练录制关闭”“固定 2B 执行”和“空夹自动重开”属于历史配置；当前默认使用 D435i，开放采集与训练，支持模型切换，关闭空夹自动重开。
 
-源码路径按脚本位置解析。官方 Piper SDK 固定到提交 `c9e8a28174e71eeaac448593cb65f8ab258a92fe`（0.6.2），机器本地环境位于 `${XDG_CACHE_HOME:-$HOME/.cache}/hackathon/piper-venv`，不在项目或移动 SSD 上建立 `.venv`。首次安装需要系统 Python 3.12、uv、Git 和网络。
+## 项目拉起命令
 
-在本目录运行：
+以下命令均在**仓库根目录**执行。本仓库根目录就是原 Hackathon 项目的 `robot/`，不需要再进入一层 `robot/`。
 
-```bash
-bash run.sh setup
-bash run.sh status --can can0
-bash run.sh status --can can1
-bash run.sh firmware --can can0
-bash run.sh limits --can can0
-bash run.sh test
-```
+### 1. 首次恢复源码与环境
 
-`status` 只接收报文；`firmware` 和 `limits` 发送查询报文。`ok=true` 在 status 中只表示收到 CAN 数据，需检查 `standard_feedback` 才能判断标准状态是否完整。SDK 连接时禁用自动 Piper 初始化和接收线程，原生 SocketCAN 接收逐条记录反馈与到达时间；SDK 用于编码发送官方查询/控制指令。
-
-CAN 接口需为 UP、1000000 bit/s。本轮已启用；重启或重新插拔后需重新检查。控制前会核对当前接口配置的适配器序列号：左臂 can0=`0040004B4759530820353131`，右臂 can1=`0039002C4759530920353131`。接口名变化或序列号错配时拒绝控制，需重新核对物理映射。普通 CLI 不改变驱动器限位、零点或 CAN 报文映射。
-
-## 控制入口与实际验收边界
-
-下面两条默认仅读取、查询限位并校验计划；只有显式增加 `--execute` 才发送控制指令。运动指令要求现场机械臂固定、空间腾空且夹爪无负载，并满足反馈和限位检查。
+运行主机需要 Linux x86_64、`/usr/bin/python3.12`、uv、Git、g++、可用的 NVIDIA 驱动与 CUDA 运行环境。相机需配置设备权限；两路 SocketCAN 需已启用为 1 Mbps，并按设备序列号核对左右映射。安装脚本沿用已有机器缓存布局，迁移到新机器时需要逐项检查这些条件。
 
 ```bash
-bash run.sh hold --can can0
-bash run.sh jog --can can0 --joint 6 --delta 1 --speed 5
+git clone https://github.com/wuy66372-creator/show-harness-project.git
+cd show-harness-project
+
+# 上游源码单独恢复，版本检查要求精确匹配此提交
+git clone https://github.com/showlab/Show-Harness.git Show-Harness
+git -C Show-Harness checkout c3a133eb111a8100bcb64509b1ea891fdcee1532
+
+# 控制与相机环境
+bash show_harness/run.sh setup
+python3 cameras/setup.py
+
+# 模型推理环境、固定版本基座与官方 LoRA
+bash show_harness/models.sh setup
+bash show_harness/models.sh download
+bash show_harness/models.sh verify
+
+# 需要微调时再准备独立训练环境；先完成上面的推理环境安装
+bash show_harness/training_setup.sh
 ```
 
-动作幅度最多 2°、速度比例 1–5%，jog 到达后回到本次起始关节角。执行前要求全部电机已使能，不自动使能或恢复急停。从按键示教切换时要求结束记录、灯灭，并满足官方示例的恢复姿态窗口（J2/J3 绝对值小于约 10°，J5 约 12°～45°）及本机六关节限位，随后依次发送待机、速度比例 0 的 CAN 关节控制，再以最新反馈位置作为目标；该控制顺序尚未进行实机动作验收。成功后机械臂保持 CAN 关节控制与使能状态，不自动失能或恢复示教。初始 1 秒保持、3 秒去程、3 秒回程，反馈误差必须小于等于 0.5°。
+`download` 会下载锁定的多种基座与适配器，需要网络和足够磁盘空间；`verify` 不重新下载权重，但仍访问 Hugging Face 元数据。环境、SDK 和模型缓存默认在 `${XDG_CACHE_HOME:-$HOME/.cache}/hackathon/`。训练脚本还要求 `~/.local/bin/uv` 可用。
+
+### 2. 日常启动
+
+先确认设备映射、相机权限与 CAN 状态；启动 GUMI 本身不会使能、回位或开合夹爪。
 
 ```bash
-bash run.sh jog --can can0 --joint 6 --delta 1 --speed 5 --execute --output results/can0_jog_execution.json
+# 查询硬件与腕部相机，不执行运动
+bash show_harness/run.sh preflight
+
+# 启动本地模型服务：默认也可省略 qwen3_5_2b
+bash show_harness/models.sh start qwen3_5_2b
+bash show_harness/models.sh status
+
+# 前台启动 GUMI：默认 D435i 主视角，网页端口 8620
+bash show_harness/run.sh gumi --host 127.0.0.1 \
+  --front-source realsense --front-serial 347622075687 \
+  --floor-left 0.196 --floor-right 0.1815
 ```
 
-任一关节反馈段超过 150 ms 或驱动器反馈超过 300 ms，驱动器/主控故障、缺少六路硬件限位、目标超限、另一控制源的总线报文、接管前姿态变化或移动超过起始位置 3.5°，均拒绝/中止动作。动作中故障或中断时发送软件急停；这不能替代设备物理急停，也无法在进程被强制杀死或 CAN 链路断开时保证停机。本工具互斥锁只协调本工具的实例，无法排除其他本机程序在运行。
+`347622075687` 是既有 D435i 的序列号；更换设备应改为实际序列号，或省略 `--front-serial` 自动识别唯一一台相机。上面的左右高度值是既有现场保存的临时参考，**不是通用桌面标定值**；换工位必须重新核对并填写。命令行未显式指定高度时，代码默认两侧均为 `0.05 m`，不能把默认值当作现场标定。
 
-显式软件急停入口：
+主机本地打开：
+
+- GUMI 遥操与推理：<http://127.0.0.1:8620/>
+- 数据与训练工作台：<http://127.0.0.1:8620/training>
+- 模型 API：`http://127.0.0.1:8000/v1`
+
+远程电脑另开终端建立 SSH 转发，再访问同样的 localhost 网页：
 
 ```bash
-bash run.sh stop --can can0 --execute
+# 替换为实际 SSH 用户及主机
+ssh -N -L 127.0.0.1:8620:127.0.0.1:8620 robot_user@robot_host
 ```
 
-该指令改变设备状态，只用于停止需求；工具检查主控是否反馈急停状态，不自动恢复。
-
-### 2026-10-12 13:12–13:31 初期查询与拦截
-
-- 状态接收、SDK 固件查询、两路六关节限位查询：实机通过。
-- 左臂周期状态约 200 Hz，控制模式为示教，主控无故障码。
-- 限位缓存：官方 SDK 本轮返回了六份相同的最后一个关节数据，因此本工具以 `0x473` 报文关节编号独立保存六路限位；已验证六路各自响应。
-- 左臂 jog 预检查被拦截，未发送运动或模式切换报文：J2=-1.542°、J3=+0.868°、J5=75.519°，超出设备返回的相应限位。这可能涉及示教姿态或零点，不能据此自动修改校准。
-- `can1` 使用 `0x320–0x327` 周期主控报文，本次官方标准 V2 解码未覆盖它。支持接收、固件和限位查询；控制入口拒绝该适配器，待核对协议。
-- 9 项本地测试通过：过期/缺失反馈、故障、失能、超限、非有限数、速度/幅度边界、限位保存、未知协议、拒绝发送及示教退出/零位接管条件。
-- 尚未完成控制模式切换、关节运动及急停实机验收；下一步核对左臂姿态/零点并将反馈置于限位范围内，再进行空载小幅动作。
-
-机器反馈见 [results](results/)，原始连接检查见 [CONNECTION_STATUS.md](CONNECTION_STATUS.md)。
-
-### 13:36–13:37 已授权的支撑状态恢复与动作验收
-
-用户明确要求通过 CAN 接管复原，并确认机械臂已在重力下自然躺下、有支撑且安全。本次据此执行 `ResetPiper()`（0x150 / 0200000000000000），机械臂从示教转入待机，六关节失能，未修改零点或限位。这个操作不能在悬空或负载姿态下自动复用。
-
-随后查询六路限位，在失能/待机状态准备最近的限位内目标（边界留 0.5°），以速度比例 5% 设置 CAN 关节控制、发送目标并使能；监测反馈、故障及最大偏移。最大修正为 J5 的约 6.1°，其余目标为 J2=+0.5°、J3=-0.5°，J1/J4/J6 保持当前值。实际关节反馈到位，六关节使能，ctrl_mode=1、arm_status=0、fault_code=0。没有发送全零或更大范围的回零轨迹。
-
-`supported_restore.py` 保存这次支撑状态下的受限恢复逻辑。它要求现场支撑确认与执行标志、已处于失能待机，不自行 Reset；单关节最大修正 8°，观测偏移超过 9°、故障、反馈失效或超时会发送急停。未满足这些特殊前置条件时，继续使用普通控制入口的检查，不能以此绕过常规限位。
+既有部署曾由用户级 `gumi-local.service` 托管。若该服务已经运行，应使用已有实例，避免重复打开设备；在无动作执行时管理服务：
 
 ```bash
-bash run.sh restore --supported --execute --output results/supported_restore_receipt.json
+systemctl --user status gumi-local
+journalctl --user -u gumi-local -f
+systemctl --user restart gumi-local
 ```
 
-之后普通 `jog --joint 6 --delta 1 --speed 5 --execute` 实机通过：起点 -90.243°，目标 -89.243°，实际 -89.290°（误差 0.047°），返回 -90.203°（误差 0.040°）。该结论来自关节反馈；未单独进行视觉位姿或抓取验收。最后六关节反馈为 `[80.975, 0.405, -0.429, -70.712, 69.566, -90.203]` 度，维持 CAN 控制和电机使能。软件急停的实际触发验收仍未进行。
+这些命令仅适用于已配置该 unit 的主机，克隆仓库不会自动安装服务。停止模型服务使用 `bash show_harness/models.sh stop`。
 
-原始证据：`results/can0_requested_reset.json`、`results/can0_supported_limit_restore.json`、`results/can0_j6_execution.json`。12 项本地测试通过。左臂接口控制已跑通；can1 的协议适配、右侧实体对应及动作验收仍未完成。
-
-### 13:41–13:44 右臂接管通过
-
-用户明确要求接管右臂，并确认右臂自然躺下、空载、有支撑且周围安全。右臂原先使用 0x320–0x327；仅发送 `MasterSlaveConfig(0,0,0,0)` 有应答但未改变周期报文编号。在支撑状态下 Reset 后，驱动器反馈确认六关节失能；再发送官方 `MasterSlaveConfig(0xFC,0,0,0)`，将右臂设为运动输出臂、恢复默认偏移，周期报文切为标准 0x2A1–0x2A8，字节内容与此前记录一致。该配置改变了右臂的角色及反馈编号，不是只读操作；重启后的保持情况尚未验证。左臂未发送配置或控制指令。
-
-通过标准反馈确认右臂待机、失能、无故障后，使用相同的受限恢复入口，目标为 J3=-0.5°、J5=69.5°，其余关节保持，最大反馈变化约 5.776°。然后普通 jog 右臂 J6 +1°/返回通过：127.562° → 目标128.562°、实际128.582° → 返回127.555°，去程/回程误差 0.020°/0.007°。
-
-两臂均为 ctrl_mode=1、arm_status=0、fault_code=0，六关节使能。左臂在右臂接管前后读数一致，六关节变化均为 0.000°。这是分别接管与关节反馈的验收；未验证双臂同步轨迹、视觉抓取、碰撞规划或软件急停的实际效果。14 项本地测试通过，含左右适配器错配拒绝测试。
+### 3. 可选浏览器前视
 
 ```bash
-bash run.sh status --can can1
-bash run.sh jog --can can1 --joint 6 --delta 1 --speed 5
+bash show_harness/run.sh gumi --host 127.0.0.1 --front-source browser \
+  --floor-left 0.196 --floor-right 0.1815
 ```
 
-右臂动作仍须显式 `--execute`。支撑恢复入口新增 `--can can1`，要求已经失能、待机并满足支撑和修正幅度检查，不自行 Reset 或修改主从配置。
+浏览器模式下，在 localhost 或 HTTPS 网页点击“使用浏览器摄像头”并授权，图像来自打开网页的电脑。默认 RealSense 模式无需浏览器摄像头授权，浏览器上传不能覆盖 D435i 主视角。相机独占诊断需先停止 GUMI，入口见 [相机与本地适配说明](show_harness/README.md)。
 
-证据：`results/can1_default_offsets_probe.json`、`results/can1_supported_reset.json`、`results/can1_output_mode_config.json`、`results/can1_supported_limit_restore.json`、`results/can1_j6_execution.json`、`results/dual_arm_takeover_summary.json`。左右模式切换或恢复后需重新查询实际反馈，不能假定特殊编号已永久恢复。
+## GUMI 遥操
 
-协议依据为 [官方 Piper SDK 固定提交](https://github.com/agilexrobotics/piper_sdk/tree/c9e8a28174e71eeaac448593cb65f8ab258a92fe)，不是仿真或外部演示成绩。
+在 `/` 查看三路图像和左右臂状态，选择动作后 COMMIT，或使用持续控制。普通手控平移为 **3 mm**、旋转为 **0.005 rad**，用于摆位；模型和录制平移为 **20 mm**，两者不能混用。
 
-## 按键拖动示教
+| 操作 | 行为 |
+| --- | --- |
+| 普通 COMMIT | 执行所选左右动作对 |
+| 持续控制 | 按住方向按钮 / 键运动，松开停止后续路点；左 W/S/A/D/Q/E，右 I/K/J/L/U/O |
+| GRASP / RELEASE | 选择夹爪动作后 COMMIT；显式 RELEASE 请求打开，默认目标 100 mm |
+| 暂停并保持位置 | 中断后续路点并请求位置保持；不失能 |
+| 恢复控制 | 结束中断后重新同步，不补发旧动作、不自动回位 |
 
-依据 [松灵 PiPER 快速使用手册（2024.09）](https://new.agilex.ai/raw/upload/20241017/%EF%BC%88%E5%B7%B2%E5%8E%8B%E7%BC%A9%EF%BC%89%E6%AD%A3-PiPER%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C_%E4%B8%AD%E6%96%87%E7%89%880925_52071.pdf) §2.2（印刷页 05–06）：J5 与 J6 之间有示教按钮及指示灯。灯灭时单击进入拖动轨迹记录，绿色常亮后可拖动；再单击结束，灯灭。双击是轨迹复现，会主动运动，当前接口验收不使用。开始一段新记录会覆盖之前记录，最长记录时间 3 分钟。控制接管前按手册放到零点，并先待机再切 CAN。
+持续手控使用独占租约、100 ms 心跳和 400 ms 有效期，不积累键盘 repeat 指令。窗口失焦、页面隐藏或断连会停止后续动作。控制检查真实关节限位、反馈、故障与高度下限；完整目标校验后拆为不超过 1° 的关节小步，目标领先实测关节不超过 2°。
 
-本次通过官方站点的搜索索引读取相关章节，PDF 直接下载因服务异常未成功，未检查零点姿态插图；现场应按对应型号的原始手册插图确认姿态。
+动作要求两臂状态满足对应控制检查：已使能、CAN 控制模式、反馈健康。网页启动不自动接管示教模式。已有姿态接管的适用条件及 `--adopt-init` 说明见 [本地适配 README](show_harness/README.md)。
 
-13:27 补读 [官方 Agilex-College 的 playPos_new.py](https://github.com/agilexrobotics/Agilex-College/blob/c2688be41e1bc99a9addd555f237a16bc839d936/piper/recordAndPlayPos/playPos_new.py) 以及对应 [松灵社区教程](https://bbs.agilex.ai/d/46-%E7%8E%A9%E8%BD%ACpiper%E6%9C%BA%E6%A2%B0%E8%87%82%E5%9B%BA%E5%AE%9A%E7%82%B9%E4%BD%8D%E5%BD%95%E5%88%B6%E4%B8%8E%E6%92%AD%E6%94%BE%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0)：恢复前主要检查 J2、J3 绝对值 <0.1745 rad，J5 位于 (0.2094, 0.7854) rad。之前代码额外要求六关节都在 ±2°，该条件缺乏来源且过于严格，已改为上述参考窗口；测试确认 J1/J4/J6 可以保持非零值。这里将官方示例窗口作为保守的验收前置条件，不声称它是所有固件的强制限制。本机查询到的硬件限位继续独立检查，不放宽。
+夹爪开度和 GRASP 标签不能证明抓住物体。当前默认关闭基于小于 5 mm 开度的自动重开，以支持薄物体；100 mm 上限来自固件查询，完整行程尚未实机验收。网页暂停是软件位置保持，不能替代现场物理急停。
 
-官方示例另外包含急停/Reset/重新使能过程，并可能失去支撑；本工具没有自动照搬这段过程。先尝试原手册的待机→CAN 切换并核对实际反馈，若被固件拒绝则中止；不自动 Reset。当前 J2=-1.689°、J3=+1.146°、J5=75.601°，恢复窗口和硬件限位仍未通过，未尝试切换。
+## 采集 2 cm 成功示教
 
-[官方 SDK 维护者答复（2025-01-06）](https://github.com/agilexrobotics/piper_sdk/issues/11) 说明当时按键示教只能由按键触发。该历史答复不能证明当前 S-V1.8-5 的全部软件支持范围，因此本轮优先使用实体按键，不把 `MotionCtrl_1(..., grag_teach_ctrl=1)` 当作已验证的按钮示教替代。当前反馈的 `ctrl_mode=2` 与 `teach_status=2` 表示示教模式、记录已结束，并不表示正在允许拖动。
+1. 在 GUMI 顶部填写并保存采集任务，确认两臂与三路相机可用，点击“开始采集 · 2 cm”。
+2. 默认按住方向连续采集，每个完整 20 mm 动作单独记录，未动作侧为 STILL；也可取消持续模式，选择动作后 COMMIT。夹爪动作仍需 COMMIT，旋转不录制。
+3. 松开 / 换向后，当前完整 20 mm 动作结束才停止 / 换向；暂停、失焦或心跳超时可中断当前动作，中断步标记失败。
+4. 完成任务后点击“完成任务并保存成功示教”；失败或中断选择“结束并保存未成功轨迹”。保存不会回位、张爪或失能。
 
-失能与 Reset 不等价于重力补偿示教。[官方 SDK V2 Reset 文档](https://github.com/agilexrobotics/piper_sdk/blob/c9e8a28174e71eeaac448593cb65f8ab258a92fe/asserts/V2/INTERFACE_V2.MD) 明确提醒 Reset 会使机械臂掉落。13:31 以前未执行 Reset；13:36 在用户明确授权支撑状态恢复后执行，详见上面的实际记录。未执行零点校准或改写限位。
+录制与推理使用同款 20 mm 控制器：wrist frame、level orientation、20 段 × 50 ms 平滑插值。每步先保存 256×256 letterbox 主视角和左右腕图，再记录动作结果及实际位移。平移实测偏离 20 mm 超过 3 mm，或动作拒绝 / 中断，均不能作为成功步。采集期间拒绝模型执行。
 
-## 双腕深度相机
+数据位于 `data/teleop/rollout_NNN/`：
 
-两台 DaBai DC1 已同时通过 RGB/深度采集：左腕 `CC1365301R4`，右腕 `CC1365301HT`。彩色 640×480、深度 640×400，均设置 15 fps。入口 `bash cameras/run.sh`，绑定序列号并将 SDK 留在本机缓存。采样结束关闭相机，不改变机械臂状态。详细安装、权限、结果及尚未对齐/同步的边界见 [cameras/README.md](cameras/README.md)。
+```text
+agentview/             # 动作前主视角
+wrist_left/            # 动作前左腕图
+wrist_right/           # 动作前右腕图
+actions.jsonl          # 动作、执行状态、实际位移与夹爪状态
+metadata.json          # 任务、动作契约、相机来源、人工成功标记
+visualization.mp4
+terminal/              # 成功保存时的真实动作后终态三图
+```
 
-## Show-Harness 适配
+只有完整、人工确认成功、无失败步的 20 mm 示教可训练。空轨迹、未成功和服务中断后的 interrupted 轨迹不纳入训练；模型运行日志不作为人工示教。
 
-已添加无 ROS 的本地 Piper/Orbbec 后端，接入原版 PiperSession 和动作解释器，双腕持续彩色采集及左右 J6 +1°/返回通过。入口 `bash show_harness/run.sh preflight`，默认不发送运动。详见 [show_harness/README.md](show_harness/README.md)。当前仅有两台腕部相机，完整模型所需前视观测、任务标定与夹爪/通用动作仍未验收。
+## LoRA 微调
+
+打开 `/training`，逐步预览轨迹、修改已结束轨迹的任务、归档 / 恢复并选择成功示教，再选择基座、单臂 / 双臂契约和训练起点。
+
+| 契约 | 输入图像顺序 | 标签与执行约定 |
+| --- | --- | --- |
+| 左 / 右单臂 v3 | 主视角 → 所选腕图 | 仅使用所选侧示教；训练转换交换 FWD/BACK，推理执行边界交换一次 |
+| 双臂 v4 once | 主视角 → 左腕 → 右腕 | 严格左右动作对，不交换 FWD/BACK；STILL 侧不发送动作 |
+
+训练使用固定版 LLaMA-Factory，基座为 Qwen3.5 0.8B / 2B / 4B。约 16 GB 显存配置使用 batch=1、梯度累积 4、gradient checkpointing 和 SDPA；4B 要求 4-bit QLoRA。建议先用 0.8B / 2B 验证流程。
+
+- **从原始基座训练**：冻结视觉编码器与投影器，训练语言 attention 的 q_proj/v_proj。
+- **从上游动作 LoRA 续训**：默认选择匹配基座的单臂 v3 LoRA，保留原 rank 64、alpha 和全部目标模块，默认学习率 `2e-5`；不恢复旧优化器。双臂 v4 不静默套用单臂续训权重。
+- **抓取加权**：`grasp_repeat` 默认 5，可选 1–20。含独立 GRASP token 的完整样本总计保留 N 份，双臂同时抓取不平方；不修改原始示教。当前没有自动划分独立验证集。
+- **夹爪状态输入**：新训练使用动作前实测宽度与本 episode 上次成功完成的夹爪命令；每次 episode / run 从 unknown 开始。旧适配器按原契约推理，不静默改 prompt。
+
+开始训练会复制不可变数据快照、暂停控制、卸载本项目管理的推理服务，再启动独立训练进程。训练期间拒绝采集、机器人动作、推理和模型切换。可查看日志、loss / step，取消并保留检查点。结束或取消后恢复原模型，控制继续暂停，新 LoRA 需人工选择和加载。
+
+作业保存在 `data/lora_jobs/job_<时间>_<编号>/`，包含数据快照、`dataset/`、`train.yaml`、`train.log`、`job.json` 和 `adapter/`。`gumi_contract.json` 记录步长、提示版本、方向及夹爪输入契约；`sampling.json` 记录加权前后统计。完成作业可下载 `adapter.zip`，训练使用本地数据，不上传数据或启用 W&B。
+
+## 在线推理与执行
+
+1. 在 GUMI 选择官方模型或通过完整性 / 基座 / 契约校验的自训 LoRA，点击“加载所选模型”。训练页也提供“在 GUMI 中选择此 LoRA”入口。
+2. 等待加载完成，确认三路相机状态，选择与适配器匹配的左 / 右单臂或“双臂 · v4 once”，填写任务。
+3. 先点“仅推理预览”，检查原始 token 和执行方向；该入口不发送机械臂或夹爪动作。
+4. 恢复控制后，执行一步或连续运行。连续运行默认最多 20 步，可设 1–150 步；每步重新采图、推理并执行。
+5. 用“停止模型并保持”或“暂停并保持位置”结束运行。恢复连接或加载完成均不会自动续跑。
+
+模型切换会暂停控制、结束旧运行并释放旧服务；加载期间禁止动作与新推理。单臂使用主视角与所选腕图、v3 提示和最近移动历史，仅在执行边界交换 MV_FWD / MV_BACK；双臂 v4 使用三图并行执行动作对，只有 `DONE DONE` 结束。新 state-aware 双臂契约同时按上游约定记录等待侧 STILL 历史。
+
+非法 token、混合 DONE / 运动、图像过期、推理后姿态变化、心跳失效、反馈或限位错误都会拒绝 / 停止执行。被工作空间截断且实际位移不足 1 mm 时停止，避免重复零位移动作。模型输出 DONE 只表示模型报告完成，任务成功需要现场确认。
+
+默认主视角为 D435i RGB 640×480 / 15 fps，不镜像；主视角帧龄上限 0.8 秒，两腕拒绝过期帧，不用占位图替代模型观测。三路图像没有硬件同步，默认推理不依赖深度或 IMU。
+
+运行日志位于 `results/show_harness/live/`，保留输入图像、提示、原始 token、执行映射、反馈和停止原因。它们用于排查执行与方向问题，不等于成功率评测。
+
+## 恢复与验证边界
+
+仓库保存适配代码、精选证据及部分模型归档，不包含完整上游源码、全部原始示教、环境缓存和所有权重。四个约 519.5 MB 的 rank-64 权重仍在 alien；仅克隆仓库不能恢复这些自训模型，需按 [模型归档清单](MODEL_ARCHIVE.md) 取回并核对哈希。
+
+```bash
+# 固定上游与环境准备完成后运行回归测试
+bash show_harness/run.sh test
+
+# 模型已启动且对应 profile 匹配时，检查保存图片推理
+bash show_harness/models.sh check --profile qwen3_5_2b
+```
+
+既有证据包括 Piper 接口和小幅关节运动、三路 RGB、0.8B / 2B / 4B 图像推理，以及隔离合成数据的 0.8B 训练、续训和双臂加载链路。它们不能证明新任务抓取成功率或 2B / 4B 微调已实测。2026-10-22 归档检查有一项 HTTP 连接复用测试间歇报错，详情见下方 checkpoint；不能将历史测试描述为全部通过。
+
+## 详细文档
+
+| 文档 | 内容 |
+| --- | --- |
+| [本地适配与 GUMI](show_harness/README.md) | 相机、CAN、姿态接管、遥操与硬件证据 |
+| [采集与训练](show_harness/COLLECTION_TRAINING.md) | 数据格式、训练契约、GRASP 加权、夹爪状态、自训加载 |
+| [模型安装](show_harness/MODELS.md) | 权重、依赖、服务与历史浏览器前视配置 |
+| [模型切换](show_harness/MODEL_SWITCH.md) | 后台切换、加载状态与互斥 |
+| [在线执行](show_harness/LIVE_CONTROL.md) | 单臂执行路径、停止条件与日志；历史相机 / 自动释放配置以本文后续更新为准 |
+| [方向审计](show_harness/DIRECTION_AUDIT.md) | 单臂 FWD/BACK 映射与零位移停止 |
+| [薄物体夹持](show_harness/GRIPPER_THIN_OBJECTS.md) | 关闭默认空夹自动重开 |
+| [归档检查](show_harness/GIT_CHECKPOINT_20261022.md) | 测试实际范围与已知间歇失败 |
+| [模型归档边界](MODEL_ARCHIVE.md) | 已入库和需从 alien 恢复的模型文件 |
