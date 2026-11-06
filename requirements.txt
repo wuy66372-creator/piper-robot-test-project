@@ -1,0 +1,3 @@
+piper_sdk @ git+https://github.com/agilexrobotics/piper_sdk.git@c9e8a28174e71eeaac448593cb65f8ab258a92fe
+python-can==4.6.1
+typing_extensions==4.16.0

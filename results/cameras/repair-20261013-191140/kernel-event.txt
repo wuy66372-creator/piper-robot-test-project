@@ -1,0 +1,74 @@
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb usb3-port3: disabled by hub (EMI?), re-enabling...
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3: USB disconnect, device number 3
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.1: USB disconnect, device number 6
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: USB disconnect, device number 10
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: USB disconnect, device number 14
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.2: USB disconnect, device number 9
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: USB disconnect, device number 13
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: USB disconnect, device number 17
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.3: USB disconnect, device number 38
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.4: USB disconnect, device number 37
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3: new high-speed USB device number 56 using xhci_hcd
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice= 6.63
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3: Product: USB2.1 Hub
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3: Manufacturer: GenesysLogic
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: hub 3-3:1.0: USB hub found
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: hub 3-3:1.0: 4 ports detected
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.1: new high-speed USB device number 57 using xhci_hcd
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.1: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=60.60
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: usb 3-3.1: Product: USB2.0 Hub
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: hub 3-3.1:1.0: USB hub found
+Oct 13 19:14:04 hokei-Alienware-x16-R1 kernel: hub 3-3.1:1.0: 4 ports detected
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2: new high-speed USB device number 58 using xhci_hcd
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=60.60
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2: Product: USB2.0 Hub
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: hub 3-3.2:1.0: USB hub found
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: hub 3-3.2:1.0: 4 ports detected
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.3: new full-speed USB device number 59 using xhci_hcd
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.3: New USB device found, idVendor=1d50, idProduct=606f, bcdDevice= 0.00
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.3: Product: candleLight USB to CAN adapter
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.3: Manufacturer: bytewerk
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.3: SerialNumber: 0040004B4759530820353131
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: gs_usb 3-3.3:1.0: Configuring for 1 interfaces
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: new high-speed USB device number 60 using xhci_hcd
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: New USB device found, idVendor=2bc5, idProduct=0557, bcdDevice= 1.00
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: New USB device strings: Mfr=2, Product=1, SerialNumber=3
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: Product: Dabai DC1
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: Manufacturer: Sonix Technology Co., Ltd.
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: SerialNumber: CC1365301R4
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.4: new full-speed USB device number 61 using xhci_hcd
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.4: New USB device found, idVendor=1d50, idProduct=606f, bcdDevice= 0.00
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.4: Product: candleLight USB to CAN adapter
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.4: Manufacturer: bytewerk
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.4: SerialNumber: 0039002C4759530920353131
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: gs_usb 3-3.4:1.0: Configuring for 1 interfaces
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: new high-speed USB device number 62 using xhci_hcd
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: New USB device found, idVendor=2bc5, idProduct=0557, bcdDevice= 1.00
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: New USB device strings: Mfr=2, Product=1, SerialNumber=3
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: Product: Dabai DC1
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: Manufacturer: Sonix Technology Co., Ltd.
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: SerialNumber: CC1365301HT
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: new high-speed USB device number 63 using xhci_hcd
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: New USB device found, idVendor=2bc5, idProduct=0657, bcdDevice= 0.01
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: Product: ORBBEC Depth Sensor
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: Manufacturer: Orbbec(R)
+Oct 13 19:14:05 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: new high-speed USB device number 64 using xhci_hcd
+Oct 13 19:14:06 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: New USB device found, idVendor=2bc5, idProduct=0657, bcdDevice= 0.01
+Oct 13 19:14:06 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Oct 13 19:14:06 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: Product: ORBBEC Depth Sensor
+Oct 13 19:14:06 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: Manufacturer: Orbbec(R)
+Oct 13 19:14:27 hokei-Alienware-x16-R1 kernel: usb 3-9: USB disconnect, device number 55
+Oct 13 19:14:28 hokei-Alienware-x16-R1 kernel: usb 3-9: new full-speed USB device number 65 using xhci_hcd
+Oct 13 19:14:28 hokei-Alienware-x16-R1 kernel: usb 3-9: New USB device found, idVendor=048d, idProduct=89db, bcdDevice= 0.01
+Oct 13 19:14:28 hokei-Alienware-x16-R1 kernel: usb 3-9: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Oct 13 19:14:28 hokei-Alienware-x16-R1 kernel: usb 3-9: Product: ITE Upgrade Mode
+Oct 13 19:14:28 hokei-Alienware-x16-R1 kernel: usb 3-9: Manufacturer: ITE Tech. Inc.
+Oct 13 19:14:28 hokei-Alienware-x16-R1 kernel: hid-generic 0003:048D:89DB.009C: hiddev4,hidraw8: USB HID v1.10 Device [ITE Tech. Inc. ITE Upgrade Mode] on usb-0000:00:14.0-9/input0

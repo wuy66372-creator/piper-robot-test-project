@@ -1,0 +1,116 @@
+{
+  "id": "job_20261022_154717_1924a6e8",
+  "status": "completed",
+  "created": "2026-10-22T15:47:18+0800",
+  "options": {
+    "profile": "qwen3_5_4b",
+    "mode": "left_v3",
+    "grasp_repeat": 5,
+    "initialization": "upstream_lora",
+    "epochs": 3.0,
+    "learning_rate": 2e-05,
+    "rank": 64,
+    "max_steps": -1,
+    "quantization": 4
+  },
+  "episodes": [
+    "rollout_030",
+    "rollout_029",
+    "rollout_028",
+    "rollout_027",
+    "rollout_026",
+    "rollout_025",
+    "rollout_024",
+    "rollout_023",
+    "rollout_022",
+    "rollout_021",
+    "rollout_020",
+    "rollout_018",
+    "rollout_016",
+    "rollout_015",
+    "rollout_014",
+    "rollout_013",
+    "rollout_011",
+    "rollout_010",
+    "rollout_009",
+    "rollout_006",
+    "rollout_005",
+    "rollout_003",
+    "rollout_002"
+  ],
+  "initialization": {
+    "type": "upstream_lora",
+    "profile": "qwen3_5_4b",
+    "repo": "showlab/Show-Harness-VLMs",
+    "revision": "c1c94dfa0f5f1e8827acbc9698ba5f765f1605e5",
+    "rank": 64,
+    "target_modules": [
+      "q_proj",
+      "o_proj",
+      "in_proj_qkv",
+      "in_proj_a",
+      "out_proj",
+      "up_proj",
+      "v_proj",
+      "in_proj_b",
+      "gate_proj",
+      "k_proj",
+      "in_proj_z",
+      "down_proj"
+    ],
+    "sha256": {
+      "adapter_config.json": "e92df56545a244cd58daafba684f88afc98bf9a6fba97117afc1fc54f6d376cc",
+      "adapter_model.safetensors": "52821d443398dd3aed51957c86ab52999721b933ca171eb8eaed6eb6f02a5d14"
+    }
+  },
+  "restore_profile": "job_20261022_115213_2e8bfd91",
+  "prompt_version": "v3",
+  "execution_token_swap": [
+    "MV_FWD",
+    "MV_BACK"
+  ],
+  "step_m": 0.02,
+  "adapter_path": "/home/hokei/Hackathon/robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter",
+  "sampling": {
+    "grasp_repeat": 5,
+    "original_samples": 556,
+    "training_samples": 652,
+    "original_grasp_samples": 24,
+    "training_grasp_samples": 120,
+    "original_grasp_fraction": 0.04316546762589928,
+    "training_grasp_fraction": 0.18404907975460122,
+    "original_labels": {
+      "MV_BACK": 148,
+      "MV_LEFT": 58,
+      "MV_DOWN": 90,
+      "GRASP": 24,
+      "MV_UP": 109,
+      "MV_RIGHT": 63,
+      "RELEASE": 23,
+      "DONE": 23,
+      "MV_FWD": 18
+    },
+    "training_labels": {
+      "MV_BACK": 148,
+      "MV_LEFT": 58,
+      "MV_DOWN": 90,
+      "GRASP": 120,
+      "MV_UP": 109,
+      "MV_RIGHT": 63,
+      "RELEASE": 23,
+      "DONE": 23,
+      "MV_FWD": 18
+    }
+  },
+  "samples": 652,
+  "contract": {
+    "mode": "left_v3",
+    "step_m": 0.02,
+    "template": "qwen3_5_nothink",
+    "execution_token_swap": [
+      "MV_FWD",
+      "MV_BACK"
+    ],
+    "gripper_state": "width-last-command-v1"
+  }
+}

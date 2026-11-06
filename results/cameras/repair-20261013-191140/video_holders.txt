@@ -1,0 +1,2 @@
+lsof: WARNING: can't stat() fuse.portal file system /run/user/120/doc
+      Output information may be incomplete.

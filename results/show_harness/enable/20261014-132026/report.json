@@ -1,0 +1,234 @@
+{
+  "time": "2026-10-14T13:20:23.974272+08:00",
+  "operation": "explicit enable both arms; retain standby; no joint targets",
+  "arms": {
+    "can0": {
+      "before": {
+        "ids": {
+          "0x212": 59,
+          "0x251": 60,
+          "0x252": 60,
+          "0x253": 60,
+          "0x254": 60,
+          "0x255": 60,
+          "0x256": 60,
+          "0x261": 12,
+          "0x262": 12,
+          "0x263": 12,
+          "0x264": 12,
+          "0x265": 12,
+          "0x266": 12,
+          "0x2A1": 60,
+          "0x2A2": 60,
+          "0x2A3": 60,
+          "0x2A4": 60,
+          "0x2A5": 60,
+          "0x2A6": 60,
+          "0x2A7": 60,
+          "0x2A8": 60
+        },
+        "hardware_limits": {},
+        "enabled": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 0,
+        "arm_status": 0,
+        "teach_status": 0,
+        "fault_code": 0,
+        "joints_deg": [
+          73.239,
+          -2.012,
+          1.042,
+          -69.376,
+          76.11,
+          -106.031
+        ]
+      },
+      "ok": true,
+      "after": {
+        "ids": {
+          "0x212": 301,
+          "0x251": 303,
+          "0x252": 303,
+          "0x253": 303,
+          "0x254": 303,
+          "0x255": 303,
+          "0x256": 303,
+          "0x261": 61,
+          "0x262": 61,
+          "0x263": 61,
+          "0x264": 60,
+          "0x265": 60,
+          "0x266": 61,
+          "0x2A1": 302,
+          "0x2A2": 302,
+          "0x2A3": 303,
+          "0x2A4": 303,
+          "0x2A5": 303,
+          "0x2A6": 303,
+          "0x2A7": 303,
+          "0x2A8": 303,
+          "0x476": 1
+        },
+        "hardware_limits": {},
+        "enabled": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 0,
+        "arm_status": 0,
+        "teach_status": 0,
+        "fault_code": 0,
+        "joints_deg": [
+          73.239,
+          -2.012,
+          1.042,
+          -69.376,
+          76.11,
+          -106.031
+        ]
+      }
+    },
+    "can1": {
+      "before": {
+        "ids": {
+          "0x212": 60,
+          "0x251": 60,
+          "0x252": 60,
+          "0x253": 60,
+          "0x254": 60,
+          "0x255": 60,
+          "0x256": 60,
+          "0x261": 12,
+          "0x262": 12,
+          "0x263": 12,
+          "0x264": 12,
+          "0x265": 12,
+          "0x266": 12,
+          "0x2A1": 60,
+          "0x2A2": 60,
+          "0x2A3": 60,
+          "0x2A4": 60,
+          "0x2A5": 60,
+          "0x2A6": 60,
+          "0x2A7": 60,
+          "0x2A8": 60
+        },
+        "hardware_limits": {},
+        "enabled": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          24.0,
+          24.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 0,
+        "arm_status": 0,
+        "teach_status": 0,
+        "fault_code": 0,
+        "joints_deg": [
+          -65.703,
+          5.517,
+          1.909,
+          73.066,
+          75.717,
+          50.174
+        ]
+      },
+      "ok": true,
+      "after": {
+        "ids": {
+          "0x212": 363,
+          "0x251": 365,
+          "0x252": 365,
+          "0x253": 365,
+          "0x254": 365,
+          "0x255": 365,
+          "0x256": 365,
+          "0x261": 73,
+          "0x262": 73,
+          "0x263": 73,
+          "0x264": 73,
+          "0x265": 73,
+          "0x266": 73,
+          "0x2A1": 365,
+          "0x2A2": 365,
+          "0x2A3": 365,
+          "0x2A4": 366,
+          "0x2A5": 366,
+          "0x2A6": 365,
+          "0x2A7": 365,
+          "0x2A8": 365,
+          "0x476": 1
+        },
+        "hardware_limits": {},
+        "enabled": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          24.0,
+          24.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 0,
+        "arm_status": 0,
+        "teach_status": 0,
+        "fault_code": 0,
+        "joints_deg": [
+          -65.703,
+          5.517,
+          1.909,
+          73.066,
+          75.717,
+          50.174
+        ]
+      }
+    }
+  }
+}

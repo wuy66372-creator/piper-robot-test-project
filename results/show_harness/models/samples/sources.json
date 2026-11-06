@@ -1,0 +1,108 @@
+{
+  "repo": "showlab/Show-Harness-Data",
+  "revision": "0c568ffa757ed02cc01780e553a54e8289af2b49",
+  "samples": [
+    {
+      "split": "real",
+      "episode": {
+        "episode": "rollout_000",
+        "embodiment": "franka",
+        "task": "pick up the banana and place it on the blue plate",
+        "num_frames": 50,
+        "num_samples": 51
+      },
+      "sample": {
+        "instruction": "<image><image>You are controlling a robot arm with two cameras:\n- Agentview: overhead view of the robot and workspace\n- Wristview: close-up view from the gripper\n\nTask: pick up the banana and place it on the blue plate\nRecent moves, newest first: none\n\nOutput exactly one action token:\nMV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, DONE\n\nCheck both camera views and choose the next action:\n- Use AgentView to locate the target when it is not in wrist view\n- Use wrist view to fine-align when target is visible up close\n- GRASP when gripper fingers are aligned around the object\n- RELEASE when object is above the destination\n- DONE when the task is complete: the object is at its destination and the gripper is clear\n- Avoid repeating a direction that conflicts with the most recent move\n\nReturn the single token only, no punctuation, no explanation:",
+        "input": "",
+        "output": "MV_DOWN",
+        "images": [
+          "metadata/rollout_000/agentview/0000.png",
+          "metadata/rollout_000/wrist/0000.png"
+        ]
+      },
+      "local_images": [
+        "real-rollout_000-agentview.png",
+        "real-rollout_000-wrist.png"
+      ],
+      "source_images": [
+        {
+          "path": "real/metadata/rollout_000/agentview/0000.png",
+          "sha256": "6b8b01d5f6ed5c357c36856ff79109ebe95f527ad3595d78c34b08b26c7d53a6"
+        },
+        {
+          "path": "real/metadata/rollout_000/wrist/0000.png",
+          "sha256": "9e90a4e7d9cf353f1c60e1077742412abb513140ffac03fba595c857476c2a3a"
+        }
+      ]
+    },
+    {
+      "split": "real",
+      "episode": {
+        "episode": "rollout_101",
+        "embodiment": "piper",
+        "task": "pick up the banana and place it on the plate",
+        "num_frames": 44,
+        "num_samples": 45
+      },
+      "sample": {
+        "instruction": "<image><image>You are controlling a robot arm with two cameras:\n- Agentview: overhead view of the robot and workspace\n- Wristview: close-up view from the gripper\n\nTask: pick up the banana and place it on the plate\nRecent moves, newest first: none\n\nOutput exactly one action token:\nMV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, DONE\n\nCheck both camera views and choose the next action:\n- Use AgentView to locate the target when it is not in wrist view\n- Use wrist view to fine-align when target is visible up close\n- GRASP when gripper fingers are aligned around the object\n- RELEASE when object is above the destination\n- DONE when the task is complete: the object is at its destination and the gripper is clear\n- Avoid repeating a direction that conflicts with the most recent move\n\nReturn the single token only, no punctuation, no explanation:",
+        "input": "",
+        "output": "MV_DOWN",
+        "images": [
+          "metadata/rollout_101/agentview/0000.png",
+          "metadata/rollout_101/wrist/0000.png"
+        ]
+      },
+      "local_images": [
+        "real-rollout_101-agentview.png",
+        "real-rollout_101-wrist.png"
+      ],
+      "source_images": [
+        {
+          "path": "real/metadata/rollout_101/agentview/0000.png",
+          "sha256": "d791fe1240ea3ad3883346f20f46e37d854f9fbac43414f10fabf579aef5d598"
+        },
+        {
+          "path": "real/metadata/rollout_101/wrist/0000.png",
+          "sha256": "e831a568e11d650a0e0cffa1ca0642386a4904e38688a31bfbbc9d677922e3ce"
+        }
+      ]
+    },
+    {
+      "split": "sim",
+      "episode": {
+        "episode": "rollout_000",
+        "simulator": "robolab",
+        "env_id": "BlockInLeftBowlTask",
+        "seed": 1000,
+        "embodiment": "franka",
+        "task": "Put the orange block in the left bowl",
+        "num_frames": 63,
+        "num_samples": 64
+      },
+      "sample": {
+        "instruction": "<image><image>You are controlling a robot arm with two cameras:\n- Agentview: overhead view of the robot and workspace\n- Wristview: close-up view from the gripper\n\nTask: Put the orange block in the left bowl\nRecent moves, newest first: none\n\nOutput exactly one action token:\nMV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, DONE\n\nCheck both camera views and choose the next action:\n- Use AgentView to locate the target when it is not in wrist view\n- Use wrist view to fine-align when target is visible up close\n- GRASP when gripper fingers are aligned around the object\n- RELEASE when object is above the destination\n- DONE when the task is complete: the object is at its destination and the gripper is clear\n- Avoid repeating a direction that conflicts with the most recent move\n\nReturn the single token only, no punctuation, no explanation:",
+        "input": "",
+        "output": "MV_DOWN",
+        "images": [
+          "metadata/rollout_000/agentview/0000.png",
+          "metadata/rollout_000/wrist/0000.png"
+        ]
+      },
+      "local_images": [
+        "sim-rollout_000-agentview.png",
+        "sim-rollout_000-wrist.png"
+      ],
+      "source_images": [
+        {
+          "path": "sim/metadata/rollout_000/agentview/0000.png",
+          "sha256": "f7bc47bdddde06a396628ca9e83c6f3d21b045256cdf7254f9eb4f8397132e79"
+        },
+        {
+          "path": "sim/metadata/rollout_000/wrist/0000.png",
+          "sha256": "ed4ff4bc27acc0fb1ca0e62f201460e470ab71f2138d113f958570ef58767d2c"
+        }
+      ]
+    }
+  ]
+}

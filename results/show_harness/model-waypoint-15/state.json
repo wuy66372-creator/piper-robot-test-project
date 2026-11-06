@@ -1,0 +1,107 @@
+{
+  "recording": false,
+  "rollout": null,
+  "steps": 0,
+  "total_pairs": 0,
+  "rollouts_saved": 0,
+  "dual_arm": true,
+  "arms": [
+    "left",
+    "right"
+  ],
+  "last": {
+    "left": "-",
+    "right": "-"
+  },
+  "gripper_closed": {
+    "left": false,
+    "right": true
+  },
+  "holding": {
+    "left": false,
+    "right": false
+  },
+  "picked": {
+    "left": 0,
+    "right": 0
+  },
+  "placed": {
+    "left": 0,
+    "right": 0
+  },
+  "task_done": false,
+  "can_stop": false,
+  "require_task_done": false,
+  "task_text": "双臂手动控制 · 每步3 mm · 低速5% · 实际关节限位保护 · 夹爪已接入 · 支持按住连续控制",
+  "ee_pos": {
+    "left": [
+      0.041,
+      0.0417,
+      0.2129
+    ],
+    "right": [
+      0.0753,
+      0.0108,
+      0.2688
+    ]
+  },
+  "gap_m": null,
+  "gap_warn": false,
+  "message": "Ready",
+  "sim": false,
+  "step_tokens": [
+    "MV_FWD",
+    "MV_BACK",
+    "MV_LEFT",
+    "MV_RIGHT",
+    "MV_UP",
+    "MV_DOWN",
+    "ROTATE_CW",
+    "ROTATE_CCW",
+    "GRASP",
+    "RELEASE"
+  ],
+  "still_token": "STILL",
+  "aliases": {
+    "W": "MV_FWD",
+    "S": "MV_BACK",
+    "A": "MV_LEFT",
+    "D": "MV_RIGHT",
+    "Q": "MV_UP",
+    "E": "MV_DOWN",
+    "Z": "ROTATE_CCW",
+    "X": "ROTATE_CW",
+    "G": "GRASP",
+    "R": "RELEASE"
+  },
+  "history": [],
+  "step_m": 0.003,
+  "yaw_step_rad": 0.005,
+  "paused": true,
+  "front_camera_available": true,
+  "front_camera": {
+    "available": true,
+    "source": "browser_webcam",
+    "sequence": 101,
+    "age_upper_bound_s": 0.15321895699889865,
+    "width": 640,
+    "height": 480,
+    "synchronized_with_wrists": false
+  },
+  "model_run": {
+    "active": false,
+    "phase": "idle",
+    "message": "2B 单臂推理待启动",
+    "thread_pending": false,
+    "model": "qwen3_5_2b_showharness_ft",
+    "step_m": 0.02,
+    "max_decision_age_s": 5.0,
+    "model_waypoint_jump_deg": 15.0
+  },
+  "recording_available": false,
+  "gripper_control_available": true,
+  "continuous_active": false,
+  "joint_envelope_deg": null,
+  "joint_waypoint_max_delta_deg": 1,
+  "joint_tracking_lead_deg": 2
+}

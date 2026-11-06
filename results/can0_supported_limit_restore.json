@@ -1,0 +1,301 @@
+{
+  "checked_at": "2026-10-12T13:37:28.076615+08:00",
+  "operation": "explicit user-authorized supported-arm recovery to nearest valid hardware limits",
+  "ok": true,
+  "executed": true,
+  "before": {
+    "ids": {
+      "0x212": 173,
+      "0x251": 174,
+      "0x252": 174,
+      "0x253": 174,
+      "0x254": 174,
+      "0x255": 174,
+      "0x256": 174,
+      "0x261": 35,
+      "0x262": 34,
+      "0x263": 35,
+      "0x264": 35,
+      "0x265": 35,
+      "0x266": 35,
+      "0x2A1": 174,
+      "0x2A2": 174,
+      "0x2A3": 174,
+      "0x2A4": 174,
+      "0x2A5": 174,
+      "0x2A6": 174,
+      "0x2A7": 174,
+      "0x2A8": 174,
+      "0x473": 6
+    },
+    "hardware_limits": {
+      "1": {
+        "min_deg": -150.0,
+        "max_deg": 150.0,
+        "max_speed_rad_s": 0.3
+      },
+      "2": {
+        "min_deg": 0.0,
+        "max_deg": 180.0,
+        "max_speed_rad_s": 0.3
+      },
+      "3": {
+        "min_deg": -170.0,
+        "max_deg": 0.0,
+        "max_speed_rad_s": 0.3
+      },
+      "4": {
+        "min_deg": -100.0,
+        "max_deg": 100.0,
+        "max_speed_rad_s": 0.3
+      },
+      "5": {
+        "min_deg": -70.0,
+        "max_deg": 70.0,
+        "max_speed_rad_s": 0.3
+      },
+      "6": {
+        "min_deg": -180.0,
+        "max_deg": 180.0,
+        "max_speed_rad_s": 0.3
+      }
+    },
+    "enabled": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "driver_voltage_V": [
+      23.0,
+      23.0,
+      23.0,
+      23.0,
+      23.0,
+      23.0
+    ],
+    "standard_feedback": true,
+    "ctrl_mode": 0,
+    "arm_status": 0,
+    "teach_status": 0,
+    "fault_code": 0,
+    "joints_deg": [
+      80.975,
+      -1.991,
+      1.415,
+      -70.761,
+      75.607,
+      -90.243
+    ]
+  },
+  "origin_deg": [
+    80.975,
+    -1.991,
+    1.415,
+    -70.761,
+    75.607,
+    -90.243
+  ],
+  "target_deg": [
+    80.975,
+    0.5,
+    -0.5,
+    -70.761,
+    69.5,
+    -90.243
+  ],
+  "max_excursion_deg": [
+    0.0,
+    2.396,
+    1.856,
+    0.38,
+    6.096,
+    0.0
+  ],
+  "after": {
+    "ids": {
+      "0x1C0": 28,
+      "0x1C1": 139,
+      "0x1C2": 28,
+      "0x1C3": 27,
+      "0x212": 448,
+      "0x251": 451,
+      "0x252": 451,
+      "0x253": 451,
+      "0x254": 451,
+      "0x255": 451,
+      "0x256": 451,
+      "0x261": 91,
+      "0x262": 90,
+      "0x263": 90,
+      "0x264": 90,
+      "0x265": 90,
+      "0x266": 91,
+      "0x2A1": 451,
+      "0x2A2": 451,
+      "0x2A3": 451,
+      "0x2A4": 451,
+      "0x2A5": 451,
+      "0x2A6": 451,
+      "0x2A7": 451,
+      "0x2A8": 451,
+      "0x473": 6,
+      "0x476": 2
+    },
+    "hardware_limits": {
+      "1": {
+        "min_deg": -150.0,
+        "max_deg": 150.0,
+        "max_speed_rad_s": 0.3
+      },
+      "2": {
+        "min_deg": 0.0,
+        "max_deg": 180.0,
+        "max_speed_rad_s": 0.3
+      },
+      "3": {
+        "min_deg": -170.0,
+        "max_deg": 0.0,
+        "max_speed_rad_s": 0.3
+      },
+      "4": {
+        "min_deg": -100.0,
+        "max_deg": 100.0,
+        "max_speed_rad_s": 0.3
+      },
+      "5": {
+        "min_deg": -70.0,
+        "max_deg": 70.0,
+        "max_speed_rad_s": 0.3
+      },
+      "6": {
+        "min_deg": -180.0,
+        "max_deg": 180.0,
+        "max_speed_rad_s": 0.3
+      }
+    },
+    "enabled": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "driver_voltage_V": [
+      23.0,
+      23.0,
+      23.0,
+      23.0,
+      23.0,
+      23.0
+    ],
+    "standard_feedback": true,
+    "ctrl_mode": 1,
+    "arm_status": 0,
+    "teach_status": 0,
+    "fault_code": 0,
+    "joints_deg": [
+      80.975,
+      0.405,
+      -0.429,
+      -70.712,
+      69.566,
+      -90.243
+    ]
+  },
+  "final": {
+    "ids": {
+      "0x1C0": 28,
+      "0x1C1": 139,
+      "0x1C2": 28,
+      "0x1C3": 27,
+      "0x212": 448,
+      "0x251": 451,
+      "0x252": 451,
+      "0x253": 451,
+      "0x254": 451,
+      "0x255": 451,
+      "0x256": 451,
+      "0x261": 91,
+      "0x262": 90,
+      "0x263": 90,
+      "0x264": 90,
+      "0x265": 90,
+      "0x266": 91,
+      "0x2A1": 451,
+      "0x2A2": 451,
+      "0x2A3": 451,
+      "0x2A4": 451,
+      "0x2A5": 451,
+      "0x2A6": 451,
+      "0x2A7": 451,
+      "0x2A8": 451,
+      "0x473": 6,
+      "0x476": 2
+    },
+    "hardware_limits": {
+      "1": {
+        "min_deg": -150.0,
+        "max_deg": 150.0,
+        "max_speed_rad_s": 0.3
+      },
+      "2": {
+        "min_deg": 0.0,
+        "max_deg": 180.0,
+        "max_speed_rad_s": 0.3
+      },
+      "3": {
+        "min_deg": -170.0,
+        "max_deg": 0.0,
+        "max_speed_rad_s": 0.3
+      },
+      "4": {
+        "min_deg": -100.0,
+        "max_deg": 100.0,
+        "max_speed_rad_s": 0.3
+      },
+      "5": {
+        "min_deg": -70.0,
+        "max_deg": 70.0,
+        "max_speed_rad_s": 0.3
+      },
+      "6": {
+        "min_deg": -180.0,
+        "max_deg": 180.0,
+        "max_speed_rad_s": 0.3
+      }
+    },
+    "enabled": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "driver_voltage_V": [
+      23.0,
+      23.0,
+      23.0,
+      23.0,
+      23.0,
+      23.0
+    ],
+    "standard_feedback": true,
+    "ctrl_mode": 1,
+    "arm_status": 0,
+    "teach_status": 0,
+    "fault_code": 0,
+    "joints_deg": [
+      80.975,
+      0.405,
+      -0.429,
+      -70.712,
+      69.566,
+      -90.243
+    ]
+  }
+}

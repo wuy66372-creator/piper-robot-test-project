@@ -1,0 +1,449 @@
+{
+  "checked_at": "2026-10-13T17:32:26.078579+08:00",
+  "profile": "qwen3_5_0_8b",
+  "model": "qwen3_5_0_8b_showharness_ft",
+  "source_repo": "showlab/Show-Harness-Data",
+  "source_revision": "0c568ffa757ed02cc01780e553a54e8289af2b49",
+  "validation_scope": "Official saved training samples; image API, template and unconstrained token output only. No hardware or task-success validation.",
+  "registered_models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "Qwen/Qwen3.5-0.8B",
+        "object": "model",
+        "created": 1791883944,
+        "owned_by": "vllm",
+        "root": "/home/hokei/.cache/hackathon/show-harness-models/huggingface/hub/Qwen/Qwen3.5-0.8B",
+        "parent": null,
+        "max_model_len": 4096,
+        "permission": [
+          {
+            "id": "modelperm-a798fa1e588ba16b",
+            "object": "model_permission",
+            "created": 1791883944,
+            "allow_create_engine": false,
+            "allow_sampling": true,
+            "allow_logprobs": true,
+            "allow_search_indices": false,
+            "allow_view": true,
+            "allow_fine_tuning": false,
+            "organization": "*",
+            "group": null,
+            "is_blocking": false
+          }
+        ]
+      },
+      {
+        "id": "qwen3_5_0_8b_showharness_ft",
+        "object": "model",
+        "created": 1791883944,
+        "owned_by": "vllm",
+        "root": "/home/hokei/.cache/hackathon/show-harness-models/adapters/qwen3_5_0_8b",
+        "parent": "Qwen/Qwen3.5-0.8B",
+        "max_model_len": null,
+        "permission": [
+          {
+            "id": "modelperm-9a7c017dd51e9a84",
+            "object": "model_permission",
+            "created": 1791883944,
+            "allow_create_engine": false,
+            "allow_sampling": true,
+            "allow_logprobs": true,
+            "allow_search_indices": false,
+            "allow_view": true,
+            "allow_fine_tuning": false,
+            "organization": "*",
+            "group": null,
+            "is_blocking": false
+          }
+        ]
+      }
+    ]
+  },
+  "checks": [
+    {
+      "episode": {
+        "episode": "rollout_000",
+        "embodiment": "franka",
+        "task": "pick up the banana and place it on the blue plate",
+        "num_frames": 50,
+        "num_samples": 51
+      },
+      "repeat": 0,
+      "raw_token": "MV_DOWN",
+      "reference_token": "MV_DOWN",
+      "response": {
+        "id": "chatcmpl-a95779768f03811e",
+        "object": "chat.completion",
+        "created": 1791883944,
+        "model": "qwen3_5_0_8b_showharness_ft",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "MV_DOWN",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "MV",
+                  "logprob": -5.364403477869928e-06,
+                  "bytes": [
+                    77,
+                    86
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "_DOWN",
+                  "logprob": -0.0025675685610622168,
+                  "bytes": [
+                    95,
+                    68,
+                    79,
+                    87,
+                    78
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": 0.0,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": []
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.24.0-6a3d2801",
+        "usage": {
+          "prompt_tokens": 339,
+          "total_tokens": 342,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "latency_s": 1.059
+      },
+      "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU, 16376 MiB, 3026 MiB",
+      "image_files": [
+        "real-rollout_000-agentview.png",
+        "real-rollout_000-wrist.png"
+      ]
+    },
+    {
+      "episode": {
+        "episode": "rollout_000",
+        "embodiment": "franka",
+        "task": "pick up the banana and place it on the blue plate",
+        "num_frames": 50,
+        "num_samples": 51
+      },
+      "repeat": 1,
+      "raw_token": "MV_DOWN",
+      "reference_token": "MV_DOWN",
+      "response": {
+        "id": "chatcmpl-89a38848667d1e90",
+        "object": "chat.completion",
+        "created": 1791883945,
+        "model": "qwen3_5_0_8b_showharness_ft",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "MV_DOWN",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "MV",
+                  "logprob": -5.364403477869928e-06,
+                  "bytes": [
+                    77,
+                    86
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "_DOWN",
+                  "logprob": -0.00369900930672884,
+                  "bytes": [
+                    95,
+                    68,
+                    79,
+                    87,
+                    78
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": 0.0,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": []
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.24.0-6a3d2801",
+        "usage": {
+          "prompt_tokens": 339,
+          "total_tokens": 342,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "latency_s": 0.141
+      },
+      "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU, 16376 MiB, 3026 MiB",
+      "image_files": [
+        "real-rollout_000-agentview.png",
+        "real-rollout_000-wrist.png"
+      ]
+    },
+    {
+      "episode": {
+        "episode": "rollout_101",
+        "embodiment": "piper",
+        "task": "pick up the banana and place it on the plate",
+        "num_frames": 44,
+        "num_samples": 45
+      },
+      "repeat": 0,
+      "raw_token": "MV_DOWN",
+      "reference_token": "MV_DOWN",
+      "response": {
+        "id": "chatcmpl-981698a738fed16f",
+        "object": "chat.completion",
+        "created": 1791883945,
+        "model": "qwen3_5_0_8b_showharness_ft",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "MV_DOWN",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "MV",
+                  "logprob": -1.7881233361549675e-05,
+                  "bytes": [
+                    77,
+                    86
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "_DOWN",
+                  "logprob": -0.00019488819816615433,
+                  "bytes": [
+                    95,
+                    68,
+                    79,
+                    87,
+                    78
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": 0.0,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": []
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.24.0-6a3d2801",
+        "usage": {
+          "prompt_tokens": 338,
+          "total_tokens": 341,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "latency_s": 0.154
+      },
+      "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU, 16376 MiB, 3028 MiB",
+      "image_files": [
+        "real-rollout_101-agentview.png",
+        "real-rollout_101-wrist.png"
+      ]
+    },
+    {
+      "episode": {
+        "episode": "rollout_101",
+        "embodiment": "piper",
+        "task": "pick up the banana and place it on the plate",
+        "num_frames": 44,
+        "num_samples": 45
+      },
+      "repeat": 1,
+      "raw_token": "MV_DOWN",
+      "reference_token": "MV_DOWN",
+      "response": {
+        "id": "chatcmpl-a0dfb648d1fc74f7",
+        "object": "chat.completion",
+        "created": 1791883945,
+        "model": "qwen3_5_0_8b_showharness_ft",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "MV_DOWN",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "MV",
+                  "logprob": -1.5616295058862306e-05,
+                  "bytes": [
+                    77,
+                    86
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "_DOWN",
+                  "logprob": -0.00017009719158522785,
+                  "bytes": [
+                    95,
+                    68,
+                    79,
+                    87,
+                    78
+                  ],
+                  "top_logprobs": []
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": 0.0,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": []
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null,
+            "routed_experts": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.24.0-6a3d2801",
+        "usage": {
+          "prompt_tokens": 338,
+          "total_tokens": 341,
+          "completion_tokens": 3,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "prompt_text": null,
+        "kv_transfer_params": null,
+        "latency_s": 0.137
+      },
+      "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU, 16376 MiB, 3028 MiB",
+      "image_files": [
+        "real-rollout_101-agentview.png",
+        "real-rollout_101-wrist.png"
+      ]
+    }
+  ]
+}

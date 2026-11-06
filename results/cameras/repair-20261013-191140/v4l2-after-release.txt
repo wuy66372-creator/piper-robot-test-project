@@ -1,0 +1,7 @@
+Integrated_Webcam_FHD: Integrat (usb-0000:00:14.0-7):
+	/dev/video2
+	/dev/video3
+	/dev/video4
+	/dev/video5
+
+Failed to open /dev/video0: Permission denied

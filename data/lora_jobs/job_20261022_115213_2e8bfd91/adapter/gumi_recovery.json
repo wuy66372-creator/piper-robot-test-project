@@ -1,0 +1,11 @@
+{
+  "checkpoint": "checkpoint-800",
+  "step": 800,
+  "epoch": 5.755395683453237,
+  "original_target_steps": 834,
+  "previous_status": "cancelled",
+  "previous_error": "Training cancelled",
+  "sha256": "ce9319ddee8ed9d88dc8150be0fef68a948dc660fb84b6ae873bca923d284214",
+  "recovered_at": "2026-10-22T12:35:33.804841+08:00",
+  "note": "User accepted checkpoint-800; original 834-step training was not completed."
+}

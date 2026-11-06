@@ -1,0 +1,122 @@
+{
+  "checks": [
+    {
+      "status": 409,
+      "result": {
+        "ok": false,
+        "status": 500,
+        "message": "model_start failed: Live motion currently supports only Qwen3.5-2B real-arm LoRA"
+      }
+    },
+    {
+      "status": 409,
+      "result": {
+        "ok": false,
+        "status": 500,
+        "message": "model_start failed: Enable a fresh front webcam before starting the model"
+      }
+    }
+  ],
+  "state": {
+    "recording": false,
+    "rollout": null,
+    "steps": 0,
+    "total_pairs": 0,
+    "rollouts_saved": 0,
+    "dual_arm": true,
+    "arms": [
+      "left",
+      "right"
+    ],
+    "last": {
+      "left": "-",
+      "right": "-"
+    },
+    "gripper_closed": {
+      "left": false,
+      "right": false
+    },
+    "holding": {
+      "left": false,
+      "right": false
+    },
+    "picked": {
+      "left": 0,
+      "right": 0
+    },
+    "placed": {
+      "left": 0,
+      "right": 0
+    },
+    "task_done": false,
+    "can_stop": false,
+    "require_task_done": false,
+    "task_text": "双臂手动控制 · 每步3 mm · 低速5% · 实际关节限位保护 · 夹爪已接入 · 支持按住连续控制",
+    "ee_pos": {
+      "left": [
+        0.0615,
+        0.0999,
+        0.2176
+      ],
+      "right": [
+        0.0694,
+        -0.0948,
+        0.1908
+      ]
+    },
+    "gap_m": null,
+    "gap_warn": false,
+    "message": "model_start failed: Enable a fresh front webcam before starting the model",
+    "sim": false,
+    "step_tokens": [
+      "MV_FWD",
+      "MV_BACK",
+      "MV_LEFT",
+      "MV_RIGHT",
+      "MV_UP",
+      "MV_DOWN",
+      "ROTATE_CW",
+      "ROTATE_CCW",
+      "GRASP",
+      "RELEASE"
+    ],
+    "still_token": "STILL",
+    "aliases": {
+      "W": "MV_FWD",
+      "S": "MV_BACK",
+      "A": "MV_LEFT",
+      "D": "MV_RIGHT",
+      "Q": "MV_UP",
+      "E": "MV_DOWN",
+      "Z": "ROTATE_CCW",
+      "X": "ROTATE_CW",
+      "G": "GRASP",
+      "R": "RELEASE"
+    },
+    "history": [],
+    "step_m": 0.003,
+    "yaw_step_rad": 0.005,
+    "paused": false,
+    "front_camera_available": false,
+    "front_camera": {
+      "available": false,
+      "source": "browser_webcam"
+    },
+    "model_run": {
+      "active": false,
+      "phase": "idle",
+      "message": "2B 单臂推理待启动",
+      "thread_pending": false,
+      "model": "qwen3_5_2b_showharness_ft",
+      "step_m": 0.02,
+      "max_decision_age_s": 5.0
+    },
+    "recording_available": false,
+    "gripper_control_available": true,
+    "continuous_active": false,
+    "joint_envelope_deg": null,
+    "joint_waypoint_max_delta_deg": 1,
+    "joint_tracking_lead_deg": 2
+  },
+  "motion_sent": false
+}

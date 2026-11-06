@@ -1,0 +1,62 @@
+[
+  {
+    "name": "webcam-rgb-mjpg",
+    "device": "/dev/video2",
+    "command": [
+      "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/tools/v4l-utils/usr/bin/v4l2-ctl",
+      "-d",
+      "/dev/video2",
+      "--set-fmt-video=width=640,height=480,pixelformat=MJPG",
+      "--set-parm=30",
+      "--stream-mmap=4",
+      "--stream-poll",
+      "--stream-count=1",
+      "--stream-to=/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/webcam-rgb-mjpg.raw",
+      "--verbose"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "elapsed_s": 2.109081646995037,
+    "bytes": 0
+  },
+  {
+    "name": "webcam-rgb-yuyv",
+    "device": "/dev/video2",
+    "command": [
+      "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/tools/v4l-utils/usr/bin/v4l2-ctl",
+      "-d",
+      "/dev/video2",
+      "--set-fmt-video=width=160,height=120,pixelformat=YUYV",
+      "--set-parm=30",
+      "--stream-mmap=4",
+      "--stream-poll",
+      "--stream-count=1",
+      "--stream-to=/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/webcam-rgb-yuyv.raw",
+      "--verbose"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "elapsed_s": 2.014618266999605,
+    "bytes": 0
+  },
+  {
+    "name": "webcam-ir",
+    "device": "/dev/video4",
+    "command": [
+      "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/tools/v4l-utils/usr/bin/v4l2-ctl",
+      "-d",
+      "/dev/video4",
+      "--set-fmt-video=width=640,height=360,pixelformat=GREY",
+      "--set-parm=15",
+      "--stream-mmap=4",
+      "--stream-poll",
+      "--stream-count=1",
+      "--stream-to=/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/webcam-ir.raw",
+      "--verbose"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "elapsed_s": 0.5175479629979236,
+    "bytes": 230400
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "id": "job_20261021_171432_c8971117",
+  "status": "completed",
+  "created": "2026-10-21T17:14:32+0800",
+  "options": {
+    "profile": "qwen3_5_4b",
+    "mode": "left_v3",
+    "epochs": 3.0,
+    "learning_rate": 0.0001,
+    "rank": 8,
+    "max_steps": -1,
+    "quantization": 4
+  },
+  "episodes": [
+    "rollout_008",
+    "rollout_006",
+    "rollout_005",
+    "rollout_003",
+    "rollout_002"
+  ],
+  "restore_profile": "qwen3_5_4b",
+  "prompt_version": "v3",
+  "execution_token_swap": [
+    "MV_FWD",
+    "MV_BACK"
+  ],
+  "step_m": 0.02,
+  "adapter_path": "/home/hokei/Hackathon/robot/data/lora_jobs/job_20261021_171432_c8971117/adapter",
+  "samples": 183,
+  "contract": {
+    "mode": "left_v3",
+    "step_m": 0.02,
+    "template": "qwen3_5_nothink",
+    "execution_token_swap": [
+      "MV_FWD",
+      "MV_BACK"
+    ]
+  }
+}

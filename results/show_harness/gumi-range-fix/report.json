@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-10-12T15:00:05.772229+08:00",
+  "tests_passed": 32,
+  "active_service_verified": true,
+  "preserved_height_reference_m": {
+    "left": 0.196,
+    "right": 0.1815
+  },
+  "state": {
+    "recording": false,
+    "rollout": null,
+    "steps": 0,
+    "total_pairs": 0,
+    "rollouts_saved": 0,
+    "dual_arm": true,
+    "arms": [
+      "left",
+      "right"
+    ],
+    "last": {
+      "left": "-",
+      "right": "-"
+    },
+    "gripper_closed": {
+      "left": true,
+      "right": true
+    },
+    "holding": {
+      "left": false,
+      "right": false
+    },
+    "picked": {
+      "left": 0,
+      "right": 0
+    },
+    "placed": {
+      "left": 0,
+      "right": 0
+    },
+    "task_done": false,
+    "can_stop": false,
+    "require_task_done": false,
+    "task_text": "双臂手动控制 · 每步1 mm · 低速5% · 实际关节限位保护 · 夹爪已接入 · 支持按住连续控制",
+    "ee_pos": {
+      "left": [
+        0.0806,
+        -0.0114,
+        0.2043
+      ],
+      "right": [
+        0.0786,
+        0.0157,
+        0.1815
+      ]
+    },
+    "gap_m": null,
+    "gap_warn": false,
+    "message": "Ready",
+    "sim": false,
+    "step_tokens": [
+      "MV_FWD",
+      "MV_BACK",
+      "MV_LEFT",
+      "MV_RIGHT",
+      "MV_UP",
+      "MV_DOWN",
+      "ROTATE_CW",
+      "ROTATE_CCW",
+      "GRASP",
+      "RELEASE"
+    ],
+    "still_token": "STILL",
+    "aliases": {
+      "W": "MV_FWD",
+      "S": "MV_BACK",
+      "A": "MV_LEFT",
+      "D": "MV_RIGHT",
+      "Q": "MV_UP",
+      "E": "MV_DOWN",
+      "Z": "ROTATE_CCW",
+      "X": "ROTATE_CW",
+      "G": "GRASP",
+      "R": "RELEASE"
+    },
+    "history": [],
+    "step_m": 0.001,
+    "yaw_step_rad": 0.005,
+    "paused": false,
+    "front_camera_available": false,
+    "recording_available": false,
+    "gripper_control_available": true,
+    "continuous_active": false,
+    "joint_envelope_deg": null,
+    "joint_waypoint_max_delta_deg": 0.5,
+    "joint_tracking_lead_deg": 2
+  }
+}

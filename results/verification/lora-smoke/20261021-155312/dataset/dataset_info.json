@@ -1,0 +1,11 @@
+{
+  "gumi": {
+    "file_name": "samples.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "images": "images"
+    }
+  }
+}

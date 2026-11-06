@@ -1,0 +1,143 @@
+{
+  "recorded_at_utc": "2026-10-22T09:02:29.886425+00:00",
+  "host": "alien (hokei-Alienware-x16-R1)",
+  "source_root": "/home/hokei/Hackathon",
+  "upstream_dependency": {
+    "path": "robot/Show-Harness",
+    "url": "https://github.com/showlab/Show-Harness.git",
+    "commit": "c3a133eb111a8100bcb64509b1ea891fdcee1532",
+    "included_in_git": false
+  },
+  "base_model_provenance": "robot/show_harness/models.lock.json",
+  "active_model_verified": false,
+  "models": [
+    {
+      "job_id": "job_20261021_171432_c8971117",
+      "weight_path": "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/adapter_model.safetensors",
+      "weight_bytes": 3674728,
+      "weight_sha256": "d3ffa696faac985e8d20ef4d07ff74b836151980f5fd27b040164b71d86afffe",
+      "weight_in_git": true,
+      "metadata_in_git": [
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/job.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/README.md",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/adapter_config.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/all_results.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/chat_template.jinja",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/gumi_contract.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/processor_config.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/tokenizer.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/tokenizer_config.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/train_results.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/trainer_state.json",
+        "robot/data/lora_jobs/job_20261021_171432_c8971117/adapter/training_loss.png"
+      ]
+    },
+    {
+      "job_id": "job_20261021_180244_6636bffe",
+      "weight_path": "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/adapter_model.safetensors",
+      "weight_bytes": 3674728,
+      "weight_sha256": "05cfd0b3c4d03ab253ae5bc05a6d122850b77543b162cff567ec6b399ad636aa",
+      "weight_in_git": true,
+      "metadata_in_git": [
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/job.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/README.md",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/adapter_config.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/all_results.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/chat_template.jinja",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/gumi_contract.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/processor_config.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/tokenizer.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/tokenizer_config.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/train_results.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/trainer_state.json",
+        "robot/data/lora_jobs/job_20261021_180244_6636bffe/adapter/training_loss.png"
+      ]
+    },
+    {
+      "job_id": "job_20261021_183757_4313c246",
+      "weight_path": "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/adapter_model.safetensors",
+      "weight_bytes": 519513832,
+      "weight_sha256": "4cfdf3b0e6318920afd0a79df27d9eef22fdd8179ac9fb3df4e99a5473a43b8e",
+      "weight_in_git": false,
+      "metadata_in_git": [
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/job.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/README.md",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/adapter_config.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/all_results.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/chat_template.jinja",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/gumi_contract.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/gumi_initialization.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/processor_config.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/tokenizer.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/tokenizer_config.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/train_results.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/trainer_state.json",
+        "robot/data/lora_jobs/job_20261021_183757_4313c246/adapter/training_loss.png"
+      ]
+    },
+    {
+      "job_id": "job_20261022_115213_2e8bfd91",
+      "weight_path": "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/adapter_model.safetensors",
+      "weight_bytes": 519513832,
+      "weight_sha256": "ce9319ddee8ed9d88dc8150be0fef68a948dc660fb84b6ae873bca923d284214",
+      "weight_in_git": false,
+      "metadata_in_git": [
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/job.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/README.md",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/adapter_config.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/chat_template.jinja",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/gumi_contract.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/gumi_initialization.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/gumi_recovery.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/processor_config.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/tokenizer.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/tokenizer_config.json",
+        "robot/data/lora_jobs/job_20261022_115213_2e8bfd91/adapter/trainer_state.json"
+      ]
+    },
+    {
+      "job_id": "job_20261022_141155_561ee087",
+      "weight_path": "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/adapter_model.safetensors",
+      "weight_bytes": 519513832,
+      "weight_sha256": "29fb0d39c06f68451f086bb705d319e8f6dec892227d20f2d3857b6c70117077",
+      "weight_in_git": false,
+      "metadata_in_git": [
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/job.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/README.md",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/adapter_config.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/all_results.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/chat_template.jinja",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/gumi_contract.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/gumi_initialization.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/processor_config.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/tokenizer.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/tokenizer_config.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/train_results.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/trainer_state.json",
+        "robot/data/lora_jobs/job_20261022_141155_561ee087/adapter/training_loss.png"
+      ]
+    },
+    {
+      "job_id": "job_20261022_154717_1924a6e8",
+      "weight_path": "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/adapter_model.safetensors",
+      "weight_bytes": 519513832,
+      "weight_sha256": "b6279b323ea07a71b561233da4e1c7781982788550e3baa7104b92381fe93972",
+      "weight_in_git": false,
+      "metadata_in_git": [
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/job.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/README.md",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/adapter_config.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/all_results.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/chat_template.jinja",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/gumi_contract.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/gumi_initialization.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/processor_config.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/tokenizer.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/tokenizer_config.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/train_results.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/trainer_state.json",
+        "robot/data/lora_jobs/job_20261022_154717_1924a6e8/adapter/training_loss.png"
+      ]
+    }
+  ]
+}

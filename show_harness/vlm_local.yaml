@@ -1,0 +1,26 @@
+# Model endpoint profiles only. Merge into a rig config after its observation contract
+# and workspace are validated; this file does not initialize or command hardware.
+vlm_backend: qwen3_5_2b
+vlm:
+  provider: vllm
+  base_url: http://127.0.0.1:8000/v1
+  timeout_s: 120
+  max_tokens: 256
+  temperature: 0
+  reasoning_cot: false
+  max_retries: 0
+  chat_template_kwargs:
+    enable_thinking: false
+vlm_backends:
+  qwen3_5_0_8b:
+    model: qwen3_5_0_8b_showharness_ft
+    execution_token_swap: [MV_FWD, MV_BACK]
+  qwen3_5_2b:
+    model: qwen3_5_2b_showharness_ft
+    execution_token_swap: [MV_FWD, MV_BACK]
+  qwen3_5_4b:
+    model: qwen3_5_4b_showharness_ft
+    execution_token_swap: [MV_FWD, MV_BACK]
+  qwen3_5_2b_sim:
+    model: qwen3_5_2b_showharness_sim
+    execution_token_swap: []

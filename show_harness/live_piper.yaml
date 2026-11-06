@@ -1,0 +1,36 @@
+# Local transport of upstream robot_piper_ft.yaml at c3a133eb.
+# Reuse this site's poses/floors and the exact released 2B endpoint profile.
+defaults:
+  - site_piper_arms.yaml
+  - vlm_local.yaml
+hardware: piper
+vlm_backend: qwen3_5_2b
+prompt: v3/mvtoken_generator_lite.txt
+motion_frame: wrist
+fine_step_m: 0.02
+# IK-solution acceptance; actuator targets are still subdivided to <=1 degree.
+model_waypoint_jump_deg: null
+up_step_m: 0.02
+level_orientation: true
+agentview_square_size: 256
+wrist_square_size: 256
+smooth_substeps: 20
+smooth_dt_s: 0.05
+plugins:
+  smooth: true
+  # Thin objects can be held below 5 mm; width alone cannot identify an empty grasp.
+  auto_release: false
+  variable_step: false
+  action_chunk: false
+  proprioception: false
+  rotation: false
+empty_width_m: 0.005
+robot:
+  settle_steps: 4
+  settle_dt_s: 0.05
+  # Both site grippers report a 100 mm configured maximum stroke (0x47E).
+  open_width_m: 0.10
+# GUMI starts at the operator's current pose. First gripper action is model-selected.
+initial_release: false
+move_to_home_on_init: false
+move_to_begin_on_init: false

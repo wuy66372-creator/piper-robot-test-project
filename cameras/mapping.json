@@ -1,0 +1,5 @@
+{
+  "left": {"serial": "CC1365301R4", "arm_can": "can0", "color_device": "/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._Dabai_DC1_CC1365301R4-video-index0"},
+  "right": {"serial": "CC1365301HT", "arm_can": "can1", "color_device": "/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._Dabai_DC1_CC1365301HT-video-index0"},
+  "evidence": "User identified CC1365301HT as right wrist; the other connected camera is left wrist."
+}

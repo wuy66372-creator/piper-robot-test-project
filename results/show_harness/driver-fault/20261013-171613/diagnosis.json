@@ -1,0 +1,267 @@
+{
+  "time": "2026-10-13T17:16:12.206076+08:00",
+  "operation": "receive-only driver fault diagnosis",
+  "arms": {
+    "can0": {
+      "state": {
+        "ids": {
+          "0x1C0": 12,
+          "0x1C1": 60,
+          "0x1C2": 12,
+          "0x1C3": 12,
+          "0x212": 119,
+          "0x251": 120,
+          "0x252": 120,
+          "0x253": 120,
+          "0x254": 120,
+          "0x255": 120,
+          "0x256": 120,
+          "0x261": 24,
+          "0x262": 24,
+          "0x263": 24,
+          "0x264": 24,
+          "0x265": 24,
+          "0x266": 24,
+          "0x2A1": 120,
+          "0x2A2": 120,
+          "0x2A3": 120,
+          "0x2A4": 120,
+          "0x2A5": 120,
+          "0x2A6": 120,
+          "0x2A7": 120,
+          "0x2A8": 120
+        },
+        "hardware_limits": {},
+        "enabled": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 1,
+        "arm_status": 0,
+        "teach_status": 0,
+        "fault_code": 0,
+        "joints_deg": [
+          9.37,
+          14.095,
+          -58.977,
+          33.398,
+          67.769,
+          -158.092
+        ]
+      },
+      "drivers": {
+        "1": {
+          "raw": "00e600221b400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 34,
+          "motor_temp_c": 27,
+          "bus_current_a": 0.0
+        },
+        "2": {
+          "raw": "00e600221d400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 34,
+          "motor_temp_c": 29,
+          "bus_current_a": 0.0
+        },
+        "3": {
+          "raw": "00e6002521400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 37,
+          "motor_temp_c": 33,
+          "bus_current_a": 0.0
+        },
+        "4": {
+          "raw": "00e6002620400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 38,
+          "motor_temp_c": 32,
+          "bus_current_a": 0.0
+        },
+        "5": {
+          "raw": "00e6002b27400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 43,
+          "motor_temp_c": 39,
+          "bus_current_a": 0.0
+        },
+        "6": {
+          "raw": "00e6002620400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 38,
+          "motor_temp_c": 32,
+          "bus_current_a": 0.0
+        }
+      }
+    },
+    "can1": {
+      "state": {
+        "ids": {
+          "0x1C0": 12,
+          "0x1C1": 60,
+          "0x1C2": 12,
+          "0x1C3": 12,
+          "0x212": 119,
+          "0x251": 120,
+          "0x252": 120,
+          "0x253": 120,
+          "0x254": 120,
+          "0x255": 120,
+          "0x256": 120,
+          "0x261": 24,
+          "0x262": 24,
+          "0x263": 24,
+          "0x264": 24,
+          "0x265": 24,
+          "0x266": 24,
+          "0x2A1": 120,
+          "0x2A2": 120,
+          "0x2A3": 120,
+          "0x2A4": 120,
+          "0x2A5": 120,
+          "0x2A6": 120,
+          "0x2A7": 120,
+          "0x2A8": 120
+        },
+        "hardware_limits": {},
+        "enabled": [
+          true,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          24.0,
+          24.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 1,
+        "arm_status": 0,
+        "teach_status": 0,
+        "fault_code": 0,
+        "joints_deg": [
+          -24.295,
+          5.641,
+          -1.583,
+          0.0,
+          24.423,
+          179.501
+        ]
+      },
+      "drivers": {
+        "1": {
+          "raw": "00e600221b400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 34,
+          "motor_temp_c": 27,
+          "bus_current_a": 0.0
+        },
+        "2": {
+          "raw": "00e600221eb40000",
+          "flags_hex": "0xb4",
+          "set_flags": [
+            "overcurrent",
+            "collision_protection",
+            "driver_error",
+            "stall_protection"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 34,
+          "motor_temp_c": 30,
+          "bus_current_a": 0.0
+        },
+        "3": {
+          "raw": "00f0002622400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 24.0,
+          "driver_temp_c": 38,
+          "motor_temp_c": 34,
+          "bus_current_a": 0.0
+        },
+        "4": {
+          "raw": "00f000261f400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 24.0,
+          "driver_temp_c": 38,
+          "motor_temp_c": 31,
+          "bus_current_a": 0.0
+        },
+        "5": {
+          "raw": "00e6002a26400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 42,
+          "motor_temp_c": 38,
+          "bus_current_a": 0.0
+        },
+        "6": {
+          "raw": "00e600261f400000",
+          "flags_hex": "0x40",
+          "set_flags": [
+            "enabled"
+          ],
+          "voltage_v": 23.0,
+          "driver_temp_c": 38,
+          "motor_temp_c": 31,
+          "bus_current_a": 0.0
+        }
+      }
+    }
+  }
+}

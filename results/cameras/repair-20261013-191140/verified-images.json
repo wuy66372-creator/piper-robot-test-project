@@ -1,0 +1,38 @@
+[
+  {
+    "file": "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/CC1365301R4-before.jpg",
+    "dimensions": [
+      640,
+      480
+    ],
+    "mode": "RGB",
+    "sha256": "4e3a80cf59cb76e6833c06584afabd077b4bc12a03a4d58746dbf8c2bf875685",
+    "min": 19,
+    "max": 255,
+    "std": 30.57700925569228
+  },
+  {
+    "file": "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/CC1365301HT-before.jpg",
+    "dimensions": [
+      640,
+      480
+    ],
+    "mode": "RGB",
+    "sha256": "3ff4f35a1a1d3cdb7bd726a5f2bd505fc3eee883cbc1ca7656456243a4e169d7",
+    "min": 0,
+    "max": 255,
+    "std": 63.010461810393394
+  },
+  {
+    "file": "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/webcam-ir.png",
+    "dimensions": [
+      640,
+      360
+    ],
+    "mode": "L",
+    "sha256": "dad519d14aaffcab01675e16ea2913b3528f9c6dfbec25236021b033100009ad",
+    "min": 1,
+    "max": 255,
+    "std": 70.49866333873565
+  }
+]

@@ -1,0 +1,100 @@
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: pci 0000:01:00.0: 126.024 Gb/s available PCIe bandwidth, limited by 16.0 GT/s PCIe x8 link at 0000:00:01.0 (capable of 252.048 Gb/s with 16.0 GT/s PCIe x16 link)
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: new high-speed USB device number 10 using xhci_hcd
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: New USB device found, idVendor=2bc5, idProduct=0557, bcdDevice= 1.00
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: New USB device strings: Mfr=2, Product=1, SerialNumber=3
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: Product: Dabai DC1
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: Manufacturer: Sonix Technology Co., Ltd.
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: SerialNumber: CC1365301R4
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-7: new high-speed USB device number 11 using xhci_hcd
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-7: New USB device found, idVendor=0bda, idProduct=555d, bcdDevice=24.01
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-7: New USB device strings: Mfr=3, Product=1, SerialNumber=2
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-7: Product: Integrated_Webcam_FHD
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-7: Manufacturer: CN0330D58LG0033BC33TA00
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-7: SerialNumber: 200901010001
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: new high-speed USB device number 13 using xhci_hcd
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: New USB device found, idVendor=2bc5, idProduct=0557, bcdDevice= 1.00
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: New USB device strings: Mfr=2, Product=1, SerialNumber=3
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: Product: Dabai DC1
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: Manufacturer: Sonix Technology Co., Ltd.
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: SerialNumber: CC1365301HT
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: new high-speed USB device number 14 using xhci_hcd
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: New USB device found, idVendor=2bc5, idProduct=0657, bcdDevice= 0.01
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: Product: ORBBEC Depth Sensor
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.1.4: Manufacturer: Orbbec(R)
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: new high-speed USB device number 17 using xhci_hcd
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: New USB device found, idVendor=2bc5, idProduct=0657, bcdDevice= 0.01
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: Product: ORBBEC Depth Sensor
+Oct 12 19:19:02 hokei-Alienware-x16-R1 kernel: usb 3-3.2.4: Manufacturer: Orbbec(R)
+Oct 12 19:19:03 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 12 19:19:03 hokei-Alienware-x16-R1 kernel: uvcvideo 3-7:1.0: Found UVC 1.10 device Integrated_Webcam_FHD (0bda:555d)
+Oct 12 19:19:03 hokei-Alienware-x16-R1 kernel: uvcvideo 3-7:1.2: Found UVC 1.50 device Integrated_Webcam_FHD (0bda:555d)
+Oct 12 19:19:03 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 12 19:19:03 hokei-Alienware-x16-R1 kernel: usbcore: registered new interface driver uvcvideo
+Oct 13 16:27:16 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 127425 (stream) did not claim interface 1 before use
+Oct 13 16:27:16 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 127425 (stream) did not claim interface 1 before use
+Oct 13 16:27:16 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:27:16 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:27:16 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:27:16 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:31:33 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 128437 (stream) did not claim interface 1 before use
+Oct 13 16:31:34 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 128437 (stream) did not claim interface 1 before use
+Oct 13 16:31:34 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:31:34 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:31:34 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:31:34 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:41:27 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 131067 (stream) did not claim interface 1 before use
+Oct 13 16:41:27 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 131067 (stream) did not claim interface 1 before use
+Oct 13 16:41:27 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:41:27 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:41:27 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:41:27 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:48:56 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 136563 (stream) did not claim interface 1 before use
+Oct 13 16:48:56 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 136563 (stream) did not claim interface 1 before use
+Oct 13 16:48:56 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:48:56 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:48:56 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:48:56 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:53:30 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 140323 (stream) did not claim interface 1 before use
+Oct 13 16:53:30 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 140323 (stream) did not claim interface 1 before use
+Oct 13 16:53:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:53:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:53:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:53:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:59:37 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 142635 (stream) did not claim interface 1 before use
+Oct 13 16:59:37 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 142635 (stream) did not claim interface 1 before use
+Oct 13 16:59:37 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:59:37 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 16:59:37 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 16:59:37 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:20:30 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 145295 (stream) did not claim interface 1 before use
+Oct 13 17:20:30 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 145295 (stream) did not claim interface 1 before use
+Oct 13 17:20:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:20:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:20:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:20:30 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:23:43 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 159489 (stream) did not claim interface 1 before use
+Oct 13 17:23:43 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 159489 (stream) did not claim interface 1 before use
+Oct 13 17:23:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:23:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:23:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:23:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:30:13 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 161231 (stream) did not claim interface 1 before use
+Oct 13 17:30:13 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 161231 (stream) did not claim interface 1 before use
+Oct 13 17:30:13 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:30:13 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:30:13 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:30:13 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:32:43 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 163209 (stream) did not claim interface 1 before use
+Oct 13 17:32:43 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 163209 (stream) did not claim interface 1 before use
+Oct 13 17:32:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:32:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:32:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:32:43 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:46:31 hokei-Alienware-x16-R1 kernel: usb 3-3.2.2: usbfs: process 165656 (stream) did not claim interface 1 before use
+Oct 13 17:46:31 hokei-Alienware-x16-R1 kernel: usb 3-3.1.2: usbfs: process 165656 (stream) did not claim interface 1 before use
+Oct 13 17:46:31 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:46:31 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.2.2:1.0: No streaming interface found for terminal 32772.
+Oct 13 17:46:31 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: Found UVC 1.00 device Dabai DC1 (2bc5:0557)
+Oct 13 17:46:31 hokei-Alienware-x16-R1 kernel: uvcvideo 3-3.1.2:1.0: No streaming interface found for terminal 32772.

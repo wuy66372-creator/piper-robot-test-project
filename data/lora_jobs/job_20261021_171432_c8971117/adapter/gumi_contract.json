@@ -1,0 +1,9 @@
+{
+  "mode": "left_v3",
+  "step_m": 0.02,
+  "template": "qwen3_5_nothink",
+  "execution_token_swap": [
+    "MV_FWD",
+    "MV_BACK"
+  ]
+}

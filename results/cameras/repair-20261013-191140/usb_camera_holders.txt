@@ -1,0 +1,9 @@
+COMMAND    PID  USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+stream  172952 hokei    8u   CHR 189,272      0t0  560 /dev/bus/usb/003/017
+stream  172952 hokei    9u   CHR 189,268      0t0  539 /dev/bus/usb/003/013
+stream  172952 hokei   10u   CHR 189,268      0t0  539 /dev/bus/usb/003/013
+stream  172952 hokei   11u   CHR 189,269      0t0  540 /dev/bus/usb/003/014
+stream  172952 hokei   12u   CHR 189,265      0t0  525 /dev/bus/usb/003/010
+stream  172952 hokei   13u   CHR 189,265      0t0  525 /dev/bus/usb/003/010
+lsof: WARNING: can't stat() fuse.portal file system /run/user/120/doc
+      Output information may be incomplete.

@@ -1,0 +1,27 @@
+begin_pose: init
+move_to_begin_on_init: false
+move_to_home_on_init: false
+mirror_capture: false
+arms:
+  left:
+    wrist_camera_topic: /camera_l/color/image_raw
+    poses:
+      init:
+      - 1.1273605237406974
+      - 0.8164999306679872
+      - -0.3457671781125966
+      - -0.20652481038848902
+      - 0.7283084435647138
+      - -1.6397368322486727
+    z_floor_m: 0.196
+  right:
+    wrist_camera_topic: /camera_r/color/image_raw
+    poses:
+      init:
+      - -1.4764263741395633
+      - 0.7640702399380775
+      - -0.23975587934646106
+      - 0.7144854358889187
+      - 0.9484642754112785
+      - 1.7598154847858825
+    z_floor_m: 0.1815

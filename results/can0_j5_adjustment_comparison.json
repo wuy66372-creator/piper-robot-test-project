@@ -1,0 +1,28 @@
+{
+  "comparison": "13:28 recovery check -> 13:31 after reported J5 adjustment",
+  "before_deg": [
+    73.176,
+    -1.689,
+    1.146,
+    -71.302,
+    75.601,
+    -106.004
+  ],
+  "after_deg": [
+    73.176,
+    -1.69,
+    1.014,
+    -70.396,
+    75.646,
+    -88.13
+  ],
+  "delta_deg": [
+    0.0,
+    -0.001,
+    -0.132,
+    0.906,
+    0.045,
+    17.874
+  ],
+  "conclusion": "J6 changed +17.874 deg; J5 changed +0.045 deg. Still not ready for teaching-to-CAN takeover. No motion sent."
+}

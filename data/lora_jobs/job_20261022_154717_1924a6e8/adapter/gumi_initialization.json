@@ -1,0 +1,25 @@
+{
+  "type": "upstream_lora",
+  "profile": "qwen3_5_4b",
+  "repo": "showlab/Show-Harness-VLMs",
+  "revision": "c1c94dfa0f5f1e8827acbc9698ba5f765f1605e5",
+  "rank": 64,
+  "target_modules": [
+    "q_proj",
+    "o_proj",
+    "in_proj_qkv",
+    "in_proj_a",
+    "out_proj",
+    "up_proj",
+    "v_proj",
+    "in_proj_b",
+    "gate_proj",
+    "k_proj",
+    "in_proj_z",
+    "down_proj"
+  ],
+  "sha256": {
+    "adapter_config.json": "e92df56545a244cd58daafba684f88afc98bf9a6fba97117afc1fc54f6d376cc",
+    "adapter_model.safetensors": "52821d443398dd3aed51957c86ab52999721b933ca171eb8eaed6eb6f02a5d14"
+  }
+}

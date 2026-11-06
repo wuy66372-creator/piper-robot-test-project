@@ -1,0 +1,36 @@
+{
+  "serial": "347622075687",
+  "firmware": "5.15.1.55",
+  "sdk": "2.56.5.9235",
+  "checked_at": "2026-10-21T14:37:02+0800",
+  "attempts": [
+    {
+      "profile": "<pyrealsense2.[video_]stream_profile: Depth(0) 424x240 @ 6fps Z16>",
+      "method": "direct_sensor_frame_queue",
+      "ok": true
+    }
+  ],
+  "ok": true,
+  "shape": [
+    240,
+    424
+  ],
+  "depth_scale_m": 0.0010000000474974513,
+  "valid_fraction": 0.6549036949685535,
+  "min_m": 0.3500000238418579,
+  "median_m": 1.5100001096725464,
+  "max_m": 3.808000087738037,
+  "visualization_range_m": [
+    0.2,
+    2.0
+  ],
+  "frame_number": 4,
+  "timestamp_ms": 89790.997,
+  "intrinsics": {
+    "fx": 214.08746337890625,
+    "fy": 214.08746337890625,
+    "ppx": 214.01275634765625,
+    "ppy": 120.71533966064453
+  },
+  "low_power": true
+}

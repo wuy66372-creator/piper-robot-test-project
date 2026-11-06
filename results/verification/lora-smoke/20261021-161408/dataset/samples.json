@@ -1,0 +1,22 @@
+[
+  {
+    "instruction": "<image><image><image>You are controlling a dual-arm robot with three cameras:\n- Agentview: first-person view of the workspace and both arms\n- Wristleft: close-up view from the LEFT gripper\n- Wristright: close-up view from the RIGHT gripper\n\nTask: synthetic infrastructure smoke test\nLeft arm recent moves, newest first: none\nRight arm recent moves, newest first: none\n\nOutput exactly two action tokens separated by a space: the LEFT arm token first, then the RIGHT arm token.\nEach token is one of:\nMV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, STILL, DONE\n\nCheck all three camera views and choose the next action for each arm:\n- Use Agentview to locate the target and to keep the two arms coordinated\n- Use each wrist view to fine-align that arm when the target is visible up close\n- GRASP when that gripper's fingers are aligned around the target\n- RELEASE when that gripper holds the target above its destination\n- STILL when that arm must hold its position while the other arm catches up\n- DONE DONE when the whole task is complete and both grippers are clear\n- Avoid repeating a direction that conflicts with that arm's most recent move\n\nReturn the two tokens only, no punctuation, no explanation:\n",
+    "input": "",
+    "output": "MV_UP STILL",
+    "images": [
+      "/home/hokei/Hackathon/robot/results/verification/lora-smoke/20261021-161408/episodes/rollout_000/agentview/0000.png",
+      "/home/hokei/Hackathon/robot/results/verification/lora-smoke/20261021-161408/episodes/rollout_000/wrist_left/0000.png",
+      "/home/hokei/Hackathon/robot/results/verification/lora-smoke/20261021-161408/episodes/rollout_000/wrist_right/0000.png"
+    ]
+  },
+  {
+    "instruction": "<image><image><image>You are controlling a dual-arm robot with three cameras:\n- Agentview: first-person view of the workspace and both arms\n- Wristleft: close-up view from the LEFT gripper\n- Wristright: close-up view from the RIGHT gripper\n\nTask: synthetic infrastructure smoke test\nLeft arm recent moves, newest first: MV_UP\nRight arm recent moves, newest first: STILL\n\nOutput exactly two action tokens separated by a space: the LEFT arm token first, then the RIGHT arm token.\nEach token is one of:\nMV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, STILL, DONE\n\nCheck all three camera views and choose the next action for each arm:\n- Use Agentview to locate the target and to keep the two arms coordinated\n- Use each wrist view to fine-align that arm when the target is visible up close\n- GRASP when that gripper's fingers are aligned around the target\n- RELEASE when that gripper holds the target above its destination\n- STILL when that arm must hold its position while the other arm catches up\n- DONE DONE when the whole task is complete and both grippers are clear\n- Avoid repeating a direction that conflicts with that arm's most recent move\n\nReturn the two tokens only, no punctuation, no explanation:\n",
+    "input": "",
+    "output": "DONE DONE",
+    "images": [
+      "/home/hokei/Hackathon/robot/results/verification/lora-smoke/20261021-161408/episodes/rollout_000/terminal/agentview.png",
+      "/home/hokei/Hackathon/robot/results/verification/lora-smoke/20261021-161408/episodes/rollout_000/terminal/wrist_left.png",
+      "/home/hokei/Hackathon/robot/results/verification/lora-smoke/20261021-161408/episodes/rollout_000/terminal/wrist_right.png"
+    ]
+  }
+]

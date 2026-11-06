@@ -1,0 +1,10 @@
+{
+  "adapter_repo": "showlab/Show-Harness-VLMs",
+  "adapter_revision": "c1c94dfa0f5f1e8827acbc9698ba5f765f1605e5",
+  "models": {
+    "qwen3_5_0_8b": {"repo": "Qwen/Qwen3.5-0.8B", "revision": "2fc06364715b967f1860aea9cf38778875588b17"},
+    "qwen3_5_2b": {"repo": "Qwen/Qwen3.5-2B", "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc"},
+    "qwen3_5_4b": {"repo": "Qwen/Qwen3.5-4B", "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"}
+  },
+  "adapters": ["qwen3_5_0_8b", "qwen3_5_2b", "qwen3_5_4b", "qwen3_5_2b_sim"]
+}

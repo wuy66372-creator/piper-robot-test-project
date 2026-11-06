@@ -1,0 +1,22 @@
+# DaBai DC1 color and legacy depth USB interfaces only.
+SUBSYSTEM=="usb", ATTR{idVendor}=="2bc5", ATTR{idProduct}=="0557", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2bc5", ATTR{idProduct}=="0657", GROUP="plugdev", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="555d", GROUP="plugdev", MODE="0660"
+uid=1000(hokei) gid=1000(hokei) groups=1000(hokei),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),114(lpadmin),125(docker)
+getfacl: Removing leading '/' from absolute path names
+# file: dev/bus/usb/003/011
+# owner: root
+# group: root
+user::rw-
+group::rw-
+other::r--
+
+# file: dev/video2
+# owner: root
+# group: plugdev
+user::rw-
+user:gdm:rw-
+group::rw-
+mask::rw-
+other::---
+

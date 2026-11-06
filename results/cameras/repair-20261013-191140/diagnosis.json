@@ -1,0 +1,132 @@
+{
+  "updated_at": "2026-10-13T19:19:03.558728+08:00",
+  "status": "partial_repair_privileged_camera_step_and_hub_event_clarification_pending",
+  "host": "hokei-Alienware-x16-R1",
+  "constraints": {
+    "host_rebooted": false,
+    "can_control_commands_sent": false,
+    "robot_service_restarted": false,
+    "files_deleted_by_repair_commands": false,
+    "usb_reset_executed_by_agent": false,
+    "uvcvideo_reloaded": false
+  },
+  "actions": [
+    {
+      "kind": "camera_publisher_sigterm",
+      "pid": 172952,
+      "normal_exit": true,
+      "parent_gumi_pid": 172889,
+      "parent_untouched": true
+    },
+    {
+      "kind": "diagnostic_tool",
+      "description": "Downloaded Ubuntu v4l-utils 1.26.1-4build3 and extracted only in this artifact folder; no system package installation"
+    },
+    {
+      "kind": "native_capture_tests",
+      "description": "V4L2 RGB MJPG640x480, YUYV160x120 and MJPG1920x1080 produced zero bytes/select timeout; IR640x360 produced one complete frame"
+    },
+    {
+      "kind": "orbbec_sdk_rgbd_capture",
+      "description": "Existing camera-only capture executable attempted; shared USB hub event coincided with SDK depth setup failure; no further active tests on shared hub performed"
+    }
+  ],
+  "cameras": [
+    {
+      "id": "left_orbbec",
+      "serial": "CC1365301R4",
+      "usb_path": "3-3.1.2",
+      "status": "SDK RGB fresh before publisher stopped; post-hub-event V4L2 nodes exist but denied to hokei",
+      "image": "CC1365301R4-before.jpg",
+      "width": 640,
+      "height": 480,
+      "age_at_copy_s": 0.0168,
+      "depth_status": "not_verified; attempted RGB-D capture failed during hub disconnect"
+    },
+    {
+      "id": "right_orbbec",
+      "serial": "CC1365301HT",
+      "usb_path": "3-3.2.2",
+      "status": "SDK RGB fresh before publisher stopped; post-hub-event V4L2 nodes exist but denied to hokei",
+      "image": "CC1365301HT-before.jpg",
+      "width": 640,
+      "height": 480,
+      "age_at_copy_s": 0.0049,
+      "depth_status": "not_verified; attempted RGB-D capture failed during hub disconnect"
+    },
+    {
+      "id": "integrated_webcam_rgb",
+      "usb_id": "0bda:555d",
+      "usb_path": "3-7",
+      "video_node": "/dev/video2",
+      "status": "FAILED no frames without device holder; reset not yet possible without sudo",
+      "image": null
+    },
+    {
+      "id": "integrated_webcam_ir",
+      "usb_id": "0bda:555d",
+      "usb_path": "3-7",
+      "video_node": "/dev/video4",
+      "status": "PASS complete native V4L2 frame and verified PNG",
+      "image": "webcam-ir.png",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "root_cause_findings": {
+    "orbbec_confirmed": "Project SDK publisher exclusively owned RGB/depth usbfs nodes. After release UVC reattach logged No streaming interface found. After later hub reenumeration V4L2 nodes reappeared with root:video 0660 and only gdm ACL; hokei is plugdev but not video, existing Orbbec rule covers USB only.",
+    "integrated_rgb_confirmed": "Failure reproduced below browser layer: VIDIOC_STREAMON succeeded, select timed out, zero bytes; no holders. IR on same physical device works.",
+    "integrated_rgb_unresolved": "Cannot distinguish sensor, firmware, driver, or transient device state until targeted webcam reset and repeat capture.",
+    "shared_hub_event": "At 19:14:04 kernel logged usb3-port3 disabled by hub (EMI?), re-enabling. Entire 3-3 subtree disconnected/re-enumerated including USB-CAN. Same second as SDK attempt. No root hub or CAN command issued; causation and physical intervention unconfirmed. Internal webcam 3-7 unaffected by this event."
+  },
+  "privileges": {
+    "dmesg": "Operation not permitted; equivalent kernel events obtained from journalctl -k",
+    "sudo": "sudo -n requires password",
+    "udev_rule_fix": "prepared but not installed"
+  },
+  "pending": [
+    "User/Kei clarification whether there was physical hub/cable/power intervention at 19:14:04",
+    "Run prepared camera-only privileged script or manually reset unique webcam and install narrow Orbbec video4linux rule",
+    "Then recheck native RGB frame and Orbbec access; do not retry shared-hub SDK/depth until event understood",
+    "Keep GUMI camera publisher stopped to release camera ownership; GUMI parent was not restarted"
+  ],
+  "prepared_privileged_command": "sudo /usr/bin/python3 /home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/repair-camera-access.py",
+  "verification": [
+    {
+      "file": "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/CC1365301R4-before.jpg",
+      "dimensions": [
+        640,
+        480
+      ],
+      "mode": "RGB",
+      "sha256": "4e3a80cf59cb76e6833c06584afabd077b4bc12a03a4d58746dbf8c2bf875685",
+      "min": 19,
+      "max": 255,
+      "std": 30.57700925569228
+    },
+    {
+      "file": "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/CC1365301HT-before.jpg",
+      "dimensions": [
+        640,
+        480
+      ],
+      "mode": "RGB",
+      "sha256": "3ff4f35a1a1d3cdb7bd726a5f2bd505fc3eee883cbc1ca7656456243a4e169d7",
+      "min": 0,
+      "max": 255,
+      "std": 63.010461810393394
+    },
+    {
+      "file": "/home/hokei/Hackathon/robot/results/cameras/repair-20261013-191140/webcam-ir.png",
+      "dimensions": [
+        640,
+        360
+      ],
+      "mode": "L",
+      "sha256": "dad519d14aaffcab01675e16ea2913b3528f9c6dfbec25236021b033100009ad",
+      "min": 1,
+      "max": 255,
+      "std": 70.49866333873565
+    }
+  ]
+}

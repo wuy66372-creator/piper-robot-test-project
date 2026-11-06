@@ -1,0 +1,359 @@
+{
+  "captured_at": "2026-10-12T15:24:51.395798+08:00",
+  "source": "live CAN feedback; user-taught init pose",
+  "automatic_home": false,
+  "arms": {
+    "left": {
+      "can": "can0",
+      "joints_deg": [
+        64.593,
+        46.782,
+        -19.811,
+        -11.833,
+        41.729,
+        -93.95
+      ],
+      "joints_rad": [
+        1.1273605237406974,
+        0.8164999306679872,
+        -0.3457671781125966,
+        -0.20652481038848902,
+        0.7283084435647138,
+        -1.6397368322486727
+      ],
+      "position_m": [
+        0.061115,
+        0.099721,
+        0.201408
+      ],
+      "rpy_deg": [
+        -154.877,
+        -12.664,
+        -17.281
+      ],
+      "ee_pose_xyzw": [
+        0.061115,
+        0.099721,
+        0.201408,
+        -0.9627019531476194,
+        0.12202918907219888,
+        -0.1389023926435269,
+        0.19753468489873777
+      ],
+      "gripper_width_m": 0.0007,
+      "status": {
+        "ids": {
+          "0x212": 80,
+          "0x251": 80,
+          "0x252": 80,
+          "0x253": 80,
+          "0x254": 80,
+          "0x255": 80,
+          "0x256": 80,
+          "0x261": 16,
+          "0x262": 16,
+          "0x263": 16,
+          "0x264": 16,
+          "0x265": 16,
+          "0x266": 16,
+          "0x2A1": 80,
+          "0x2A2": 80,
+          "0x2A3": 80,
+          "0x2A4": 80,
+          "0x2A5": 80,
+          "0x2A6": 80,
+          "0x2A7": 80,
+          "0x2A8": 81
+        },
+        "hardware_limits": {},
+        "enabled": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 2,
+        "arm_status": 0,
+        "teach_status": 2,
+        "fault_code": 0,
+        "joints_deg": [
+          64.593,
+          46.782,
+          -19.811,
+          -11.833,
+          41.729,
+          -93.95
+        ]
+      },
+      "raw_feedback": {
+        "0x2a8": {
+          "data_hex": "000002bcffe04000",
+          "arrival_monotonic_s": 69338.963626442
+        },
+        "0x251": {
+          "data_hex": "0000000000000467",
+          "arrival_monotonic_s": 69338.958730265
+        },
+        "0x252": {
+          "data_hex": "0000fff300000325",
+          "arrival_monotonic_s": 69338.958885414
+        },
+        "0x253": {
+          "data_hex": "0000fc9afffffeab",
+          "arrival_monotonic_s": 69338.958986318
+        },
+        "0x254": {
+          "data_hex": "0000ff46ffffff30",
+          "arrival_monotonic_s": 69338.959111449
+        },
+        "0x264": {
+          "data_hex": "00e6002821400000",
+          "arrival_monotonic_s": 69338.939216086
+        },
+        "0x255": {
+          "data_hex": "0000fdce000002e1",
+          "arrival_monotonic_s": 69338.95920187
+        },
+        "0x256": {
+          "data_hex": "0000002afffff999",
+          "arrival_monotonic_s": 69338.959478931
+        },
+        "0x2a1": {
+          "data_hex": "0200010200000000",
+          "arrival_monotonic_s": 69338.962827795
+        },
+        "0x2a2": {
+          "data_hex": "0000eebb00018589",
+          "arrival_monotonic_s": 69338.962936377
+        },
+        "0x2a3": {
+          "data_hex": "000312c0fffda303",
+          "arrival_monotonic_s": 69338.963074476
+        },
+        "0x2a4": {
+          "data_hex": "ffffce88ffffbc7f",
+          "arrival_monotonic_s": 69338.963174211
+        },
+        "0x2a5": {
+          "data_hex": "0000fc510000b6be",
+          "arrival_monotonic_s": 69338.963268361
+        },
+        "0x2a6": {
+          "data_hex": "ffffb29dffffd1c7",
+          "arrival_monotonic_s": 69338.963402722
+        },
+        "0x2a7": {
+          "data_hex": "0000a301fffe9102",
+          "arrival_monotonic_s": 69338.963481123
+        },
+        "0x263": {
+          "data_hex": "00e6002723400000",
+          "arrival_monotonic_s": 69338.944115457
+        },
+        "0x262": {
+          "data_hex": "00e600221d400000",
+          "arrival_monotonic_s": 69338.948950611
+        },
+        "0x261": {
+          "data_hex": "00e600231c400000",
+          "arrival_monotonic_s": 69338.953841519
+        },
+        "0x266": {
+          "data_hex": "00e6002721400000",
+          "arrival_monotonic_s": 69338.954576443
+        },
+        "0x265": {
+          "data_hex": "00e6002923400000",
+          "arrival_monotonic_s": 69338.959346477
+        }
+      }
+    },
+    "right": {
+      "can": "can1",
+      "joints_deg": [
+        -84.593,
+        43.778,
+        -13.737,
+        40.937,
+        54.343,
+        100.83
+      ],
+      "joints_rad": [
+        -1.4764263741395633,
+        0.7640702399380775,
+        -0.23975587934646106,
+        0.7144854358889187,
+        0.9484642754112785,
+        1.7598154847858825
+      ],
+      "position_m": [
+        0.056119,
+        -0.078757,
+        0.186969
+      ],
+      "rpy_deg": [
+        -175.904,
+        -36.399,
+        -28.221
+      ],
+      "ee_pose_xyzw": [
+        0.056119,
+        -0.078757,
+        0.186969,
+        -0.9234441275731528,
+        0.22062426440705543,
+        -0.31098594362226295,
+        -0.043169666142734854
+      ],
+      "gripper_width_m": 0.0002,
+      "status": {
+        "ids": {
+          "0x212": 80,
+          "0x251": 80,
+          "0x252": 80,
+          "0x253": 80,
+          "0x254": 80,
+          "0x255": 80,
+          "0x256": 80,
+          "0x261": 16,
+          "0x262": 16,
+          "0x263": 16,
+          "0x264": 16,
+          "0x265": 16,
+          "0x266": 16,
+          "0x2A1": 80,
+          "0x2A2": 80,
+          "0x2A3": 80,
+          "0x2A4": 80,
+          "0x2A5": 79,
+          "0x2A6": 80,
+          "0x2A7": 80,
+          "0x2A8": 80
+        },
+        "hardware_limits": {},
+        "enabled": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "driver_voltage_V": [
+          23.0,
+          23.0,
+          24.0,
+          24.0,
+          23.0,
+          23.0
+        ],
+        "standard_feedback": true,
+        "ctrl_mode": 2,
+        "arm_status": 0,
+        "teach_status": 2,
+        "fault_code": 0,
+        "joints_deg": [
+          -84.593,
+          43.778,
+          -13.737,
+          40.937,
+          54.343,
+          100.83
+        ]
+      },
+      "raw_feedback": {
+        "0x2a6": {
+          "data_hex": "ffffca5700009fe9",
+          "arrival_monotonic_s": 69339.361799583
+        },
+        "0x2a7": {
+          "data_hex": "0000d447000189de",
+          "arrival_monotonic_s": 69339.361969449
+        },
+        "0x2a8": {
+          "data_hex": "000000c8ffe34000",
+          "arrival_monotonic_s": 69339.362066237
+        },
+        "0x251": {
+          "data_hex": "0000008bfffffa3d",
+          "arrival_monotonic_s": 69339.362199291
+        },
+        "0x252": {
+          "data_hex": "000000f8000002f1",
+          "arrival_monotonic_s": 69339.362279694
+        },
+        "0x262": {
+          "data_hex": "00e600221c400000",
+          "arrival_monotonic_s": 69339.34243512
+        },
+        "0x253": {
+          "data_hex": "0000fc7bffffff14",
+          "arrival_monotonic_s": 69339.362444422
+        },
+        "0x254": {
+          "data_hex": "0000025f000002c9",
+          "arrival_monotonic_s": 69339.362707821
+        },
+        "0x255": {
+          "data_hex": "0000fee3000003be",
+          "arrival_monotonic_s": 69339.362769104
+        },
+        "0x256": {
+          "data_hex": "0000002f000006df",
+          "arrival_monotonic_s": 69339.362859864
+        },
+        "0x2a1": {
+          "data_hex": "0200010200000000",
+          "arrival_monotonic_s": 69339.366461246
+        },
+        "0x2a2": {
+          "data_hex": "0000db37fffecc5b",
+          "arrival_monotonic_s": 69339.366553719
+        },
+        "0x2a3": {
+          "data_hex": "0002da59fffd50e0",
+          "arrival_monotonic_s": 69339.366692698
+        },
+        "0x2a4": {
+          "data_hex": "ffff71d1ffff91c3",
+          "arrival_monotonic_s": 69339.366726887
+        },
+        "0x2a5": {
+          "data_hex": "fffeb58f0000ab02",
+          "arrival_monotonic_s": 69339.361720157
+        },
+        "0x261": {
+          "data_hex": "00e600231c400000",
+          "arrival_monotonic_s": 69339.347280473
+        },
+        "0x266": {
+          "data_hex": "00e6002720400000",
+          "arrival_monotonic_s": 69339.348063686
+        },
+        "0x265": {
+          "data_hex": "00e6002923400000",
+          "arrival_monotonic_s": 69339.352788018
+        },
+        "0x264": {
+          "data_hex": "00f0002924400000",
+          "arrival_monotonic_s": 69339.357634488
+        },
+        "0x263": {
+          "data_hex": "00f0002824400000",
+          "arrival_monotonic_s": 69339.362536235
+        }
+      }
+    }
+  }
+}
