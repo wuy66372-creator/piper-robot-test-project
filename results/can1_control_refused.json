@@ -1,8 +1,0 @@
-{
-  "checked_at": "2026-10-12T13:14:18.162501+08:00",
-  "interface": "can1",
-  "command": "jog",
-  "executed": false,
-  "ok": false,
-  "error": "control restricted to verified can0 adapter serial; can1 protocol unverified"
-}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="466" height="128" preserveAspectRatio="xMinYMin meet" viewBox="0 0 466 128" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Mean local request latency</title>
+	<desc>Mean latency over 12 saved inputs in milliseconds: eager 220.7, language-model graphs 136.3, merged adapter 134.0, final prefill configuration 132.9.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="466" height="128"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-128)" style="clip-path: url(#clip)">
+		<g transform="">
+			<polyline points="141 33, 141 119" style="stroke: rgb(83%,87%,88%); stroke-linecap: butt; stroke-width: 0.65; fill: None; fill-rule: evenodd;"/>
+			<text x="138.5536" y="19" style="font-family: Helvetica; font-size: 8.8px;fill: rgb(27%,38%,41%); stroke:none;" transform="translate(0,38) scale(1,-1)">0</text>
+			<polyline points="202 33, 202 119" style="stroke: rgb(83%,87%,88%); stroke-linecap: butt; stroke-width: 0.65; fill: None; fill-rule: evenodd;"/>
+			<text x="197.1072" y="19" style="font-family: Helvetica; font-size: 8.8px;fill: rgb(27%,38%,41%); stroke:none;" transform="translate(0,38) scale(1,-1)">50</text>
+			<polyline points="263 33, 263 119" style="stroke: rgb(83%,87%,88%); stroke-linecap: butt; stroke-width: 0.65; fill: None; fill-rule: evenodd;"/>
+			<text x="255.6608" y="19" style="font-family: Helvetica; font-size: 8.8px;fill: rgb(27%,38%,41%); stroke:none;" transform="translate(0,38) scale(1,-1)">100</text>
+			<polyline points="324 33, 324 119" style="stroke: rgb(83%,87%,88%); stroke-linecap: butt; stroke-width: 0.65; fill: None; fill-rule: evenodd;"/>
+			<text x="316.6608" y="19" style="font-family: Helvetica; font-size: 8.8px;fill: rgb(27%,38%,41%); stroke:none;" transform="translate(0,38) scale(1,-1)">150</text>
+			<polyline points="385 33, 385 119" style="stroke: rgb(83%,87%,88%); stroke-linecap: butt; stroke-width: 0.65; fill: None; fill-rule: evenodd;"/>
+			<text x="377.6608" y="19" style="font-family: Helvetica; font-size: 8.8px;fill: rgb(27%,38%,41%); stroke:none;" transform="translate(0,38) scale(1,-1)">200</text>
+			<text x="69.63499999999999" y="107.9" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,215) scale(1,-1)">Eager baseline</text>
+			<rect x="141" y="105.6" width="269.25399999999996" height="10.799999999999997" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(27%,38%,41%); fill-rule: evenodd;"/>
+			<text x="416.25399999999996" y="107.9" style="font-family: Helvetica-Bold; font-size: 9.6px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,215) scale(1,-1)">220.7</text>
+			<text x="30.0295" y="85.9" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,171) scale(1,-1)">Language-model graphs</text>
+			<rect x="141" y="83.6" width="166.286" height="10.799999999999997" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(56%,63%,65%); fill-rule: evenodd;"/>
+			<text x="313.286" y="85.9" style="font-family: Helvetica-Bold; font-size: 9.6px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,171) scale(1,-1)">136.3</text>
+			<text x="23.959000000000003" y="63.9" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,127) scale(1,-1)">Graphs + merged adapter</text>
+			<rect x="141" y="61.6" width="163.48000000000002" height="10.800000000000004" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(56%,63%,65%); fill-rule: evenodd;"/>
+			<text x="310.48" y="63.9" style="font-family: Helvetica-Bold; font-size: 9.6px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,127) scale(1,-1)">134.0</text>
+			<text x="18.980999999999995" y="41.9" style="font-family: Helvetica-Bold; font-size: 9.5px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,83) scale(1,-1)">Final prefill configuration</text>
+			<rect x="141" y="39.6" width="162.13800000000003" height="10.800000000000004" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,42%,43%); fill-rule: evenodd;"/>
+			<text x="309.13800000000003" y="41.9" style="font-family: Helvetica-Bold; font-size: 9.6px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,83) scale(1,-1)">132.9</text>
+			<text x="141" y="3" style="font-family: Helvetica-Bold; font-size: 9.5px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,6) scale(1,-1)">Mean request latency (ms)</text>
+		</g>
+	</g>
+</svg>

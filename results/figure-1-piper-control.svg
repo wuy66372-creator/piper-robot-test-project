@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="466" height="192" preserveAspectRatio="xMinYMin meet" viewBox="0 0 466 192" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Piper control paths</title>
+	<desc>Scene and wrist images feed a local policy or an online harness. A shared interpreter maps, checks, and executes commands.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="466" height="192"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-192)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="2" y="75" width="105" height="67" rx="4" ry="4" style="stroke: rgb(60%,69%,70%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,96%,96%); fill-rule: evenodd;"/>
+			<text x="10" y="127" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,254) scale(1,-1)">RGB observations</text>
+			<text x="10" y="112" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,224) scale(1,-1)">Scene + wrist views</text>
+			<text x="10" y="100" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,200) scale(1,-1)">Reject stale frames</text>
+			<rect x="135" y="128" width="147" height="48" rx="4" ry="4" style="stroke: rgb(60%,69%,70%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,98%); fill-rule: evenodd;"/>
+			<text x="143" y="161" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,322) scale(1,-1)">Local policy</text>
+			<text x="143" y="146" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,292) scale(1,-1)">Qwen3.5-4B + adapter</text>
+			<rect x="135" y="45" width="147" height="64" rx="4" ry="4" style="stroke: rgb(60%,69%,70%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(93%,95%,98%); fill-rule: evenodd;"/>
+			<text x="143" y="94" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,188) scale(1,-1)">Online harness</text>
+			<text x="143" y="79" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,158) scale(1,-1)">GPT-5.5 planner sets</text>
+			<text x="143" y="67" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,134) scale(1,-1)">subgoals for the controller</text>
+			<rect x="311" y="64" width="152" height="93" rx="4" ry="4" style="stroke: rgb(60%,69%,70%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,96%,96%); fill-rule: evenodd;"/>
+			<text x="319" y="142" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,284) scale(1,-1)">Piper interpreter</text>
+			<text x="319" y="127" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,254) scale(1,-1)">Map token to arm frame</text>
+			<text x="319" y="115" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,230) scale(1,-1)">Check pose and joint limits</text>
+			<text x="319" y="103" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,206) scale(1,-1)">Execute bounded motion</text>
+			<text x="319" y="91" style="font-family: Helvetica; font-size: 9.2px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,182) scale(1,-1)">Read back arm state</text>
+			<polyline points="107 110, 120 110" style="stroke: rgb(27%,38%,41%); stroke-linecap: butt; stroke-width: 1; fill: None; fill-rule: evenodd;"/>
+			<polyline points="120 110, 120 152, 135 152" style="stroke: rgb(27%,38%,41%); stroke-linecap: butt; stroke-width: 1; fill: None; fill-rule: evenodd;"/>
+			<polygon points="135 152, 130 154.7, 130 149.3" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(27%,38%,41%); fill-rule: evenodd;"/>
+			<polyline points="120 110, 120 78, 135 78" style="stroke: rgb(27%,38%,41%); stroke-linecap: butt; stroke-width: 1; fill: None; fill-rule: evenodd;"/>
+			<polygon points="135 78, 130 80.7, 130 75.3" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(27%,38%,41%); fill-rule: evenodd;"/>
+			<polyline points="282 152, 296 152, 296 111" style="stroke: rgb(27%,38%,41%); stroke-linecap: butt; stroke-width: 1; fill: None; fill-rule: evenodd;"/>
+			<polyline points="282 78, 296 78, 296 111" style="stroke: rgb(27%,38%,41%); stroke-linecap: butt; stroke-width: 1; fill: None; fill-rule: evenodd;"/>
+			<polyline points="296 111, 311 111" style="stroke: rgb(27%,38%,41%); stroke-linecap: butt; stroke-width: 1; fill: None; fill-rule: evenodd;"/>
+			<polygon points="311 111, 306 113.7, 306 108.3" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(27%,38%,41%); fill-rule: evenodd;"/>
+			<polyline points="388 64, 388 18, 55 18, 55 75" style="stroke: rgb(27%,38%,41%); stroke-linecap: butt; stroke-width: 1; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="55 75, 52.3 70, 57.7 70" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(27%,38%,41%); fill-rule: evenodd;"/>
+			<text x="149.902" y="23" style="font-family: Helvetica; font-size: 9.4px;fill: rgb(27%,38%,41%); stroke:none;" transform="translate(0,46) scale(1,-1)">Fresh observations after execution</text>
+		</g>
+	</g>
+</svg>

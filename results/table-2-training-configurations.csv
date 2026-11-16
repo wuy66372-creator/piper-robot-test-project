@@ -1,0 +1,5 @@
+Adapter initialisation and inputs,Rank,Episodes,Examples,Mean loss,Time (s)
+New adapter on base model,8,13,342,0.6698,439.4
+Continue released adapter,64,13,342,0.2135,620.5
+Continue with gripper state,64,23,556,0.1207,"1,629.4"
+Continue with gripper state and fivefold grasp sampling,64,23,652,0.1613,"1,151.7"

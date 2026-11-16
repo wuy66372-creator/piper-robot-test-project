@@ -1,0 +1,8 @@
+Study,Setting,Data or adaptation,Action representation,Evaluation unit
+VLA survey [8],Published studies,Varies by study,Multiple families,Models and protocols
+BEHAVIOR-1K [7],Simulated activities,Simulator training,Motor controls or primitives,Task success on three baseline activities
+Dobb·E [1],Ten test homes,Five minutes of local demonstrations per task,Relative pose and gripper motion,Task success after adaptation
+OpenVLA [2],Robot manipulation,Pretraining plus fine-tuning in adaptation tests,Discretised control values,Task success
+π0.5 [4],Unseen homes,Cross-robot and web data before deployment,Semantic subtask and continuous actions,Fraction of task steps completed
+BEHAVIOR Robot Suite [5],Five whole-body tasks,Task-specific teleoperation data,"Base, torso, and arm action chunks",Subtask and full-task success
+Show-Harness [6],Tabletop tasks,Zero-shot or fine-tuned on demonstrations,Discrete semantic commands,Trial success and step count
